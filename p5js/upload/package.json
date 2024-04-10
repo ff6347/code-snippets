@@ -1,0 +1,15 @@
+{
+  "name": "upload",
+  "version": "0.1.0",
+  "description": "Example for uploading a file with p5.js",
+  "main": "index.html",
+  "dependencies": {
+    "p5": "1.9.2"
+  },
+  "keywords": ["p5js", "hbk-bs", "digitale-grundlagen"],
+  "author": "ff6347 <hash@ff6347.email>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/p5": "1.7.6"
+  }
+}
