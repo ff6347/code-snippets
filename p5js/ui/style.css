@@ -1,0 +1,39 @@
+body {
+	/* remove default padding */
+	padding: 0;
+	/* remove default margins */
+	margin: 0 auto;
+}
+.container {
+	display: flex;
+}
+aside {
+	width: 25%;
+	background-color: #cccccc;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	flex: 1;
+	background-color: #fff;
+	height: 100vh;
+}
+main > div {
+	align-self: center;
+}
+
+input[type="text"], input[type="number"], input[type="color"],input[type="range"] {
+	height: 2rem;
+	width: 100%;
+	border: none;
+	color: darkgray;
+	padding: 5px;
+	border-bottom: 1px dotted black;
+
+}
+
