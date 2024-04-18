@@ -213,3 +213,6 @@ Temporary Items
 
 .vscode
 .zed
+
+.env
+.envrc
