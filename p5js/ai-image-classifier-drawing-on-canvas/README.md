@@ -1,6 +1,8 @@
 # AI Image Classify Drawing on Canvas
 
-Initial training with Google Teachable Machine was done byhttps://github.com/Diane1931
+Draw curly hair and see what type it is.
+
+Initial training with Google Teachable Machine was done byhttps://github.com/Diane1931.
 
 ## AI genereated Description
 
