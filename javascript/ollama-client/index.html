@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+		<div><span id="loading">Waiting</span><span id="spinner"></span></div>
+		<div id="inputs">
+			<label for="url"
+				>ollama url:
+				<input type="text" id="url" placeholder="http://localhost:11434" />
+			</label>
+			<label for="content">
+				Content:
+				<input type="text" id="content" />
+			</label>
+		</div>
+		<button id="send">send</button>
+		<div id="target">
+			<pre><code></code></pre>
+		</div>
+		<script type="module" src="index.js"></script>
+	</body>
+</html>
