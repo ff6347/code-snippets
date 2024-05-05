@@ -2,6 +2,11 @@
 
 ![](screenshot.png)
 
+## Prerequisites
+
+- Local installation of ollama server https://ollama.com/
+- Downloaded model using ollama (we use phi3)
+
 ## AI generated Description
 
 The provided JavaScript code adds an event listener to an element with the ID `send`. Upon clicking the "send" button, it initiates an asynchronous `main` function. This function performs several actions:
