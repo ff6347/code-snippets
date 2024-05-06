@@ -1,0 +1,11 @@
+### GET Request
+
+GET http://localhost:8000
+
+
+### POST
+
+POST http://localhost:8000
+Content-Type: application/json
+
+{"inputValue": "Hello world!"}
