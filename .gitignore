@@ -211,7 +211,7 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
 
-.vscode
+**/.vscode/settings.json
 .zed
 
 .env
