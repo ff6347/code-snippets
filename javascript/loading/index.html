@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0 auto;
+			width: 50vw;
+		}
+		button {
+			padding: 10px 20px;
+			font-size: 1.2rem;
+			cursor: pointer;
+			width: 20vw;
+		}
+	</style>
+</head>
+<body>
+	<button id="submit">Submit</button>
+	<script>
+
+		// get the button element
+		const button = document.getElementById('submit');
+		// add the click handler
+		button.addEventListener('click', () => {
+			// the counter will be used to determine the index of the dots array
+			let counter = 0;
+
+			// set an interval to change the text of the button here it will be every 200 milliseconds
+			const loadingInterval = setInterval(() => {
+				const dots = [".", "..", "..."];
+				button.innerText = `${dots[counter%dots.length]}`;
+				counter++;
+			}, 200);
+
+			// here we use setTimeout to simulate a long running process
+			// in your case this would be after the response from ollama or or llm class is there.
+
+			setTimeout(() => {
+				// clear the interval
+				clearInterval(loadingInterval);
+				// change the text of the button back to submit
+				button.innerText = "Submit";
+			}, 5000);
+		});
+
+	</script>
+</body>
+</html>
