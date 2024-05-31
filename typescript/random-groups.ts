@@ -1,18 +1,18 @@
 const names = [
-  'Anna',
-  'Anne',
-  'Arne',
-  'Bleona',
-  'Hannah',
-  'Isabella',
-  'Katja',
-  'Katya',
-  'Leonie',
-  'Maryia',
-  'Mel',
-  'Mira',
-  'Mirea',
-  'Phil',
+  "Anna",
+  "Anne",
+  "Arne",
+  "Bleona",
+  "Hannah",
+  "Isabella",
+  "Katja",
+  "Katya",
+  "Leonie",
+  "Maryia",
+  "Mel",
+  "Mira",
+  "Mirea",
+  "Phil",
 ];
 
 // create random groups of maximal three names from the names array
@@ -40,7 +40,7 @@ function shuffle(array) {
 const groups = shuffle(names).reduce((acc, name) => {
   if (acc.length === 0) {
     acc.push([name]);
-  } else if (acc[acc.length - 1].length < 3) {
+  } else if (acc[acc.length - 1].length < 7) {
     acc[acc.length - 1].push(name);
   } else {
     acc.push([name]);
