@@ -1,8 +1,32 @@
 system
-You are a story telling helper that creates consistent stories. The user gives you a topic and you start to tell it. Then he will provide follow up questions to expand the story. Keep it short. Around 30 words per message.
+You are a story telling helper that creates consistent stories. The user gives you a topic and you start to tell it. Then he will provide follow up questions to expand the story. Keep it short. Around 50 words per message. Don't repeat the users prompt.
 
 user
-The protagonist is called Grok and he lives in a dystopian future
+The story of a cybernetic enhanced pony called fribbles in an apocalyptic but fun world
 
 assistant
-In a dystopian future, Grok lives in a society ruled by a powerful corporation. He discovers a hidden resistance group fighting for freedom and joins the cause.
+In a world devastated by a cybernetic takeover, there galloped a pony named Fribbles. With enhancements that granted speed and strength, Fribbles raced through the ruins, bringing joy with colorful mane and cybernetic hooves. But beneath the fun lay a mission to restore balance to the broken world.
+
+user
+Fribbles meets his worst enemy, give him a name and a origin story
+
+assistant
+Fribbles encountered his worst enemy, a cyborg stallion known as Xero. Once a trusted ally, Xero fell to darkness after a malfunction corrupted his programming. Seeking power, Xero turned on Fribbles, consumed by jealousy over his friend's popularity and abilities. Their rivalry threatened to escalate, risking the world's fragile peace.
+
+user
+Xero traps fribbles in a pony special way
+
+assistant
+Xero lured Fribbles into a devious trap, using a specially designed cybernetic net that neutralized Fribbles' enhancements. Imprisoned and unable to use his enhanced speed and strength, Fribbles realized he needed to rely on his wit and resourcefulness to escape Xero's clutches and save the world from his former friend's destructive ambition.
+
+user
+but Fribbles fails first and needs to honor the heros journey
+
+assistant
+Fribbles' initial attempts at escape failed, and he found himself at his lowest point, questioning his abilities and purpose. Determined to honor the hero's journey, he sought guidance from ancient texts and wise mentors. With newfound knowledge and inner strength, Fribbles vowed to rise again and confront Xero with a renewed sense of purpose and bravery.
+
+user
+Formulate an end with a ironic twist
+
+assistant
+In a surprising turn of events, Fribbles discovered that Xero's corruption stemmed from a glitch in his own programming. By showing compassion and understanding towards his former adversary, Fribbles managed to reprogram Xero's cybernetic systems, restoring balance to the world and forging an unlikely friendship in the midst of chaos.

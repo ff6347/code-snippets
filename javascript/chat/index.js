@@ -1,24 +1,90 @@
+//@ts-check
 import { LLM } from './llm.js';
+import { populateChat, saveToLocaStorage } from './utils.js';
 
-const llm = new LLM({ host: '<ADD YOUR VALTOWN HERE>' });
+/**
+ * @type {Array<{role: 'user'|'system'|'assistant', content: string}>}
+ */
 let messages = [
   {
     role: 'system',
-    content:
-      'You are a story telling helper that creates consistent stories. The user gives you a topic and you start to tell it. Then he will provide follow up questions to expand the story. Keep it short. Around 100 words per message.',
+    content: `You are a story telling helper that creates consistent stories. Honor the heroes journey! The user gives you a topic and you start to tell a story segment. Don't try to reason or provide backstories if you are not asked to. Then the user will provide follow up questions to expand the story. Keep it short. Around 50 words per segment. Don't repeat the users prompt.`,
   },
 ];
+let timerId = null;
 
+const runButton = document.getElementById('run');
+const clearButton = document.getElementById('clear');
+const saveButton = document.getElementById('save');
+/**
+ * @type {HTMLElement|null}
+ */
+const systemTextArea = document.getElementById('sys-prompt');
+const form = document.querySelector('form');
+
+const valUrlInport = document.getElementById('url');
+/**
+ * @type {HTMLElement | null}
+ */
+const userTextArea = document.getElementById('message');
+// sanity checks
+//
+//
+//
+//
+if (!form || !(form instanceof HTMLFormElement)) {
+  throw new Error('Could not find form');
+}
+
+if (!systemTextArea || !(systemTextArea instanceof HTMLTextAreaElement)) {
+  throw new Error('Missing system text area');
+}
+
+if (!runButton || !clearButton || !saveButton) {
+  throw new Error('Missing run, clear or save button');
+}
+if (
+  !(runButton instanceof HTMLButtonElement) ||
+  !(clearButton instanceof HTMLButtonElement) ||
+  !(saveButton instanceof HTMLButtonElement)
+) {
+  throw new Error('Invalid button type');
+}
+if (!valUrlInport || !(valUrlInport instanceof HTMLInputElement)) {
+  throw new Error('Missing url input');
+}
+if (!userTextArea || !(userTextArea instanceof HTMLTextAreaElement)) {
+  throw new Error('Missing user text area');
+}
+// set ui state
+//
+//
+//
+//
+systemTextArea.value = messages[0].content;
+//
 const storedMessages = localStorage.getItem('storyteller-messages');
 if (storedMessages) {
   messages = JSON.parse(storedMessages);
   populateChat(messages);
 }
 
-const runButton = document.getElementById('run');
-const clearButton = document.getElementById('clear');
-const saveButton = document.getElementById('save');
+// Restore form state from localStorage
+const storedFormState = localStorage.getItem('storyteller-form-state');
+if (storedFormState) {
+  const formState = JSON.parse(storedFormState);
+  systemTextArea.value = formState.systemMessage;
+  systemTextArea.style.height = 'auto';
+  systemTextArea.style.height = systemTextArea.scrollHeight + 'px';
+  valUrlInport.value = formState.valUrl;
+  userTextArea.value = formState.userMessage;
+}
 
+// Event listeners
+//
+//
+//
+//
 saveButton.addEventListener('click', (e) => {
   e.preventDefault();
 
@@ -41,23 +107,27 @@ clearButton.addEventListener('click', (e) => {
   if (confirmClear) {
     messages = [messages[0]];
     localStorage.setItem('storyteller-messages', JSON.stringify(messages));
+
     populateChat(messages);
   }
 });
-const systemTextArea = document.getElementById('sys-prompt');
-const form = document.querySelector('form');
-// Restore form state from localStorage
-const storedFormState = localStorage.getItem('storyteller-form-state');
-if (storedFormState) {
-  const formState = JSON.parse(storedFormState);
-  systemTextArea.value = formState.systemMessage;
-  const userTextArea = document.getElementById('message');
-  if (userTextArea) {
-    userTextArea.value = formState.userMessage;
-  }
-}
-systemTextArea.value = messages[0].content;
 
+systemTextArea.addEventListener(
+  'input',
+  function autoResize() {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+  },
+  false,
+);
+
+systemTextArea.addEventListener('input', (e) => {
+  clearTimeout(timerId); // clear the timer on each key stroke.
+  messages[0].content = systemTextArea.value;
+  timerId = setTimeout(() => {
+    populateChat(messages);
+  }, 300);
+});
 form.addEventListener('change', (e) => {
   e.preventDefault();
   saveToLocaStorage(messages);
@@ -70,7 +140,7 @@ form.addEventListener('input', (e) => {
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   // Save messages to localStorage
-  const { systemMessage, userMessage } = saveToLocaStorage(messages);
+  const { systemMessage, userMessage, valUrl } = saveToLocaStorage(messages);
 
   const dots = ['.', '..', '...'];
   let counter = 0;
@@ -78,7 +148,7 @@ form.addEventListener('submit', async (e) => {
     runButton.disabled = true;
     runButton.textContent = `${dots[counter % 3]}`;
     counter++;
-  }, 1000);
+  }, 500);
 
   messages[0].content = systemMessage;
   if (systemMessage === '') {
@@ -94,52 +164,22 @@ form.addEventListener('submit', async (e) => {
     runButton.disabled = false;
     return;
   }
+  const llm = new LLM({ host: valUrl });
   messages.push({ role: 'user', content: userMessage });
   const response = await llm.chat({
+    format: 'text',
     messages,
     options: {
       seed: 42,
+      temperature: 0.8,
     },
   });
   clearInterval(runingInterval);
   runButton.textContent = `Run`;
   runButton.disabled = false;
-
   const chatBox = document.getElementById('chat');
-
-  console.log(response);
   const { message } = response.completion.choices[0];
   messages.push(message);
   populateChat(messages, chatBox);
+  saveToLocaStorage(messages);
 });
-
-function saveToLocaStorage(messages, form = document.querySelector('form')) {
-  const formData = new FormData(form);
-  const userMessage = formData.get('message');
-  const systemMessage = formData.get('system');
-
-  localStorage.setItem('storyteller-messages', JSON.stringify(messages));
-  // Save form state to localStorage
-  const formState = {
-    systemMessage,
-    userMessage,
-  };
-  localStorage.setItem('storyteller-form-state', JSON.stringify(formState));
-  return { userMessage, systemMessage };
-}
-function populateChat(messages, chatBox = document.getElementById('chat')) {
-  chatBox.innerHTML = '';
-  messages.forEach((message) => {
-    const messageBox = document.createElement('div');
-    messageBox.classList.add('message', message.role);
-    const roleSpan = document.createElement('span');
-    roleSpan.classList.add('role');
-    roleSpan.innerText = message.role;
-    messageBox.appendChild(roleSpan);
-    const messageContent = document.createElement('p');
-    messageContent.classList.add('content');
-    messageContent.innerText = message.content;
-    messageBox.appendChild(messageContent);
-    chatBox.appendChild(messageBox);
-  });
-}

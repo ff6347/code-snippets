@@ -3,26 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+
+	<title>Storyteller</title>
+	<link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
 </head>
 <link rel="stylesheet" href="style.css">
 <body>
 	<div class="row">
+		<form>
 
-		<form >
+			<div class="form-column">
 
-			<label for="system">System Prompt</label>
-			<textarea name="system" id="sys-prompt"></textarea>
-			<label for="message">Message</label>
-			<textarea name="message" id="message"></textarea>
+				<label for="url"> URL</label>
+				<input type="url" name="url" id="url" placeholder="https://ff6347-openai_api.web.val.run" required>
+				<small>Create your <a href="https://www.val.town/v/ff6347/openai_api" target="_blank" referrerpolicy="">val.town</a> url here. </small>
+			</div>
+				<div class="form-column">
+
+				<label for="system">System Prompt</label>
+				<textarea name="system" id="sys-prompt" required></textarea>
+			</div>
+			<div class="form-column">
+
+				<label for="message">Message</label>
+				<textarea name="message" id="message" required></textarea>
+			</div>
 			<div class="button-row">
 
-				<button id="save">save</button>
-				<button id="clear">clear story</button>
+				<button id="save">Save</button>
+				<button id="clear">Clear story</button>
 			</div>
 			<button id="run" type="submit">Run</button>
 		</form>
-		<div id="chat"></div>
+		<div class="column">
+
+
+			<div id="chat">
+		</div>
+		</div>
 	</div>
 	<script type="module" src="index.js"></script>
 </body>
