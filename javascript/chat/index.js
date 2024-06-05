@@ -1,7 +1,7 @@
 import { LLM } from './llm.js';
 
-const llm = new LLM({ host: 'https://ff6347-openai_api.web.val.run' });
-const messages = [
+const llm = new LLM({ host: '<ADD YOUR VALTOWN HERE>' });
+let messages = [
   {
     role: 'system',
     content:
@@ -9,13 +9,69 @@ const messages = [
   },
 ];
 
+const storedMessages = localStorage.getItem('storyteller-messages');
+if (storedMessages) {
+  messages = JSON.parse(storedMessages);
+  populateChat(messages);
+}
+
 const runButton = document.getElementById('run');
+const clearButton = document.getElementById('clear');
+const saveButton = document.getElementById('save');
+
+saveButton.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const blob = new Blob(
+    [messages.map((item) => `${item.role}\n${item.content}\n`).join('\n')],
+    {
+      type: 'text/plain;charset=utf-8',
+    },
+  );
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'storyteller-chat.txt';
+  a.click();
+});
+
+clearButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const confirmClear = confirm('Are you sure you want to clear the chat?');
+  if (confirmClear) {
+    messages = [messages[0]];
+    localStorage.setItem('storyteller-messages', JSON.stringify(messages));
+    populateChat(messages);
+  }
+});
 const systemTextArea = document.getElementById('sys-prompt');
 const form = document.querySelector('form');
-
+// Restore form state from localStorage
+const storedFormState = localStorage.getItem('storyteller-form-state');
+if (storedFormState) {
+  const formState = JSON.parse(storedFormState);
+  systemTextArea.value = formState.systemMessage;
+  const userTextArea = document.getElementById('message');
+  if (userTextArea) {
+    userTextArea.value = formState.userMessage;
+  }
+}
 systemTextArea.value = messages[0].content;
+
+form.addEventListener('change', (e) => {
+  e.preventDefault();
+  saveToLocaStorage(messages);
+});
+form.addEventListener('input', (e) => {
+  e.preventDefault();
+  saveToLocaStorage(messages);
+});
+
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+  // Save messages to localStorage
+  const { systemMessage, userMessage } = saveToLocaStorage(messages);
+
   const dots = ['.', '..', '...'];
   let counter = 0;
   const runingInterval = setInterval(() => {
@@ -24,9 +80,6 @@ form.addEventListener('submit', async (e) => {
     counter++;
   }, 1000);
 
-  const formData = new FormData(form);
-  const userMessage = formData.get('message');
-  const systemMessage = formData.get('system');
   messages[0].content = systemMessage;
   if (systemMessage === '') {
     clearInterval(runingInterval);
@@ -53,11 +106,29 @@ form.addEventListener('submit', async (e) => {
   runButton.disabled = false;
 
   const chatBox = document.getElementById('chat');
-  chatBox.innerHTML = '';
+
   console.log(response);
   const { message } = response.completion.choices[0];
   messages.push(message);
+  populateChat(messages, chatBox);
+});
 
+function saveToLocaStorage(messages, form = document.querySelector('form')) {
+  const formData = new FormData(form);
+  const userMessage = formData.get('message');
+  const systemMessage = formData.get('system');
+
+  localStorage.setItem('storyteller-messages', JSON.stringify(messages));
+  // Save form state to localStorage
+  const formState = {
+    systemMessage,
+    userMessage,
+  };
+  localStorage.setItem('storyteller-form-state', JSON.stringify(formState));
+  return { userMessage, systemMessage };
+}
+function populateChat(messages, chatBox = document.getElementById('chat')) {
+  chatBox.innerHTML = '';
   messages.forEach((message) => {
     const messageBox = document.createElement('div');
     messageBox.classList.add('message', message.role);
@@ -71,4 +142,4 @@ form.addEventListener('submit', async (e) => {
     messageBox.appendChild(messageContent);
     chatBox.appendChild(messageBox);
   });
-});
+}
