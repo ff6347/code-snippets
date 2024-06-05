@@ -1,6 +1,6 @@
 import { LLM } from './llm.js';
 
-const llm = new LLM({ host: '<ENTER YOUR OWN VAL TOWN URL HERE>' });
+const llm = new LLM({ host: 'https://ff6347-openai_api.web.val.run' });
 const messages = [
   {
     role: 'system',
