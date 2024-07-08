@@ -6,20 +6,40 @@ created during the seminar "basics of digital communication" at the University o
 
 ```plain
 .
+├── deno
+│   └── so-youve-built-an-api
+├── html+css
+│   ├── archives
+│   └── flexbox
 ├── javascript
-│   ├── functions-and-classes
-│   └── loops
+│   ├── chat
+│   ├── functions-and-classes
+│   ├── loading
+│   ├── loops
+│   ├── markov-chain
+│   ├── ollama-client
+│   └── ollama-with-weather-api
 ├── p5js
-│   ├── 2-grams-llm
-│   ├── color-chart
-│   ├── color-sampling
-│   ├── color-theme
-│   ├── color-wheel
-│   ├── global-and-local-scope
-│   ├── image-classifier-ff6347-detector
-│   ├── interact
-│   ├── reactive-to-sound
-│   ├── ui
-│   └── upload
+│   ├── 10-print-goto-10
+│   ├── 10-print-goto-10-draw
+│   ├── ai-image-classifier-drawing-on-canvas
+│   ├── ai-image-classifier-ff6347-detector
+│   ├── ai-semantic-space
+│   ├── color-chart
+│   ├── color-sampling
+│   ├── color-theme
+│   ├── color-wheel
+│   ├── data-2-grams-llm
+│   ├── global-and-local-scope
+│   ├── grid-of-nested-loops
+│   ├── grid-of-points
+│   ├── grid-of-rects
+│   ├── image-glitches
+│   ├── interact
+│   ├── interact-ui
+│   ├── interact-upload
+│   ├── ollama-data-generator
+│   ├── random-vs-noise
+│   └── sound-reactive
 └── typescript
 ```
