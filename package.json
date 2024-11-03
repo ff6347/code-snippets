@@ -4,7 +4,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "live-server --port=8080",
-		"build": "tree -d --gitignore -H \"\" -T \"digicom Code Snippets\" --hintro index-templates/hintro.html --houtro index-templates/houtro.html > index.html && cp node_modules/p5/lib/p5.min.js public/js/ && cp node_modules/p5/lib/addons/p5.sound.min.js ./public/js/"
+		"build": "tree --gitignore -H \"\" -T \"digicom Code Snippets\" --hintro index-templates/hintro.html --houtro index-templates/houtro.html > index.html && cp node_modules/p5/lib/p5.min.js public/js/ && cp node_modules/p5/lib/addons/p5.sound.min.js ./public/js/"
 	},
 	"keywords": [],
 	"author": "ff6347 <hash@ff6347.email>",
