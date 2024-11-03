@@ -48,6 +48,7 @@ export function populateChat(
     messageBox.appendChild(messageContent);
     chatBox.appendChild(messageBox);
   });
+  chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 export function capitalize(str) {
