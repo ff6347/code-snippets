@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="/public/css/reset.css">
+
+	<style>
+		body {
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+	<script src="/public/js/p5.min.js"></script>
+	<script>
+
+
+function setup() {
+	createCanvas(500, 500);
+	background('lightgoldenrodyellow');
+	angleMode(DEGREES);
+	let count = 0;
+	for (let x = 0; x < width; x += 20) {
+		for (let y = 0; y < height; y += 20) {
+			push();
+			translate(x, y);
+			if (count % 2 === 0) {
+				line(0, 5, 20, 5);
+				line(0, 10, 20, 10);
+				line(0, 15, 20, 15);
+			} else {
+				line(5, 0, 5, 20);
+				line(10, 0, 10, 20);
+				line(15, 0, 15, 20);
+			}
+
+			pop();
+			count++;
+		}
+	}
+}
+
+function draw() {}
+
+function keyPressed() {
+	if (key === 's') {
+		const name = prompt(
+			'Save image as:',
+			`out-${Date.now()}.png`
+		);
+		save(name);
+	}
+}
+
+	</script>
+</head>
+
+<body>
+	<div id="sketch"></div>
+
+</body>
+
+</html>
