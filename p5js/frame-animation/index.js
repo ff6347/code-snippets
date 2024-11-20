@@ -10,7 +10,8 @@ function preload() {
 	images.push(img2);
 }
 function setup() {
-	createCanvas(200, 200);
+	const canvas = createCanvas(200, 200);
+	canvas.parent('sketch');
 	background('white');
 }
 

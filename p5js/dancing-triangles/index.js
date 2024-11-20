@@ -5,7 +5,8 @@ const x = (n) => width * n;
 const y = (n) => height * n;
 const s = (n) => (height > width ? height * n : width * n);
 function setup() {
-	createCanvas(300, 600);
+	const canvas = createCanvas(300, 600);
+	canvas.parent('sketch');
 	colorMode(HSL, 360, 100, 100, 100);
 	angleMode(DEGREES);
 	// this is function scope

@@ -8,3 +8,8 @@ body {
 	/* remove default margins */
 	margin: 0 auto;
 }
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}

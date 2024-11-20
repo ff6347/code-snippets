@@ -5,9 +5,11 @@ body {
 	height: 100vh;
 	/* remove default padding */
 	padding: 0;
-	/* remove default margins */
-	margin: 0 auto;
+	margin: 0;
 }
-body > div {
-	align-self: center;
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 }

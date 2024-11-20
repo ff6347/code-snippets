@@ -1,22 +1,15 @@
-/// <reference path="./node_modules/@types/p5/lib/addons/p5.sound.d.ts" />
-/// <reference path="./node_modules/@types/p5/global.d.ts" />
-/// <reference path="./node_modules/@types/p5/literals.d.ts" />
-/// <reference path="./node_modules/@types/p5/constants.d.ts" />
-// @ts-check
-// Keep these comments above alive. They will help you while writing code.
-
 let img;
 const numberOfSectors = 16;
 function preload() {
 	// preload runs once
-	img = loadImage("assets/buddah.png");
+	img = loadImage('assets/buddah.png');
 }
 
 function setup() {
 	ellipseMode(CORNER);
 	// setup runs once
 	const canvas = createCanvas(256, 256);
-	canvas.parent("sketch");
+	canvas.parent('sketch');
 	background(255);
 	// load the pixels of the image
 	img.loadPixels();
@@ -114,7 +107,7 @@ function setup() {
 	// 	const y = floor(index / numberOfSectors) * sector.sectorSize;
 	// 	rect(x, y, sector.sectorSize, sector.sectorSize);
 	// });
-	sectors.forEach(sectorDrawer)
+	sectors.forEach(sectorDrawer);
 }
 
 function draw() {
