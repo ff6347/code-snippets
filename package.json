@@ -13,6 +13,7 @@
 	"description": "",
 	"type": "module",
 	"dependencies": {
+		"@ff6347/p5-easing": "0.1.1-0",
 		"p5": "1.11.1"
 	},
 	"devDependencies": {
