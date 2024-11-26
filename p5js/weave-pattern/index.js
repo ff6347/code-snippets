@@ -27,7 +27,6 @@ function draw() {}
 
 function keyPressed() {
 	if (key === 's') {
-		const name = prompt('Save image as:', `out-${Date.now()}.png`);
-		save(name);
+		save(`out-${Date.now()}.png`);
 	}
 }

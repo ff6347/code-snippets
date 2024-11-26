@@ -9,11 +9,22 @@
 	<link rel="stylesheet" href="/public/css/reset.css">
 
 	<style>
+		html,
 		body {
-			height: 100vh;
+			height: 100%;
+		}
+
+		body {
+
 			display: flex;
 			justify-content: center;
 			align-items: center;
+		}
+		main {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
 		}
 	</style>
 	<script src="/public/js/p5.min.js"></script>
@@ -21,9 +32,12 @@
 
 </head>
 
-<body>
-	<div id="sketch"></div>
 
-	</body>
+<body>
+	<main>
+		<div id="sketch"></div>
+		<a href="index.js">source code</a>
+	</main>
+</body>
 
 </html>
