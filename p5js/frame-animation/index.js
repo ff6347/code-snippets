@@ -6,9 +6,11 @@ let y = 100;
 function preload() {
 	const img1 = loadImage('./data/cat-1.png');
 	const img2 = loadImage('./data/cat-2.png');
-	images.push(img1);
-	images.push(img2);
+	// images.push(img1);
+	// images.push(img2);
+	images = [img1, img2];
 }
+
 function setup() {
 	const canvas = createCanvas(200, 200);
 	canvas.parent('sketch');
