@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-
+	<link rel="shortcut icon" href="/public/images/favicon.svg" type="image/svg+xml">
 	<link rel="stylesheet" href="/public/css/reset.css">
 
 	<style>
@@ -15,7 +15,6 @@
 		}
 
 		body {
-
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -24,14 +23,22 @@
 			height: 100%;
 			display: flex;
 			justify-content: center;
-
 			flex-direction: column;
 			align-items: flex-end;
 		}
 	</style>
-	<script src="/public/js/p5.min.js"></script>
+
+
+<script src="/public/js/p5.min.js"></script>
+<script src="/public/js/p5.easing.js"></script>
 	<script src="index.js"></script>
 
+	<script>
+		const path = window.location.pathname;
+		console.log(path);
+		const folders = path.split('/').filter((p) => p !== '');
+		document.title = folders[folders.length - 1];
+	</script>
 </head>
 
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>timekeeping</title>
+</head>
+<body>
+
+	<div id="time"></div>
+<button>play</button>
+	<script>
+		const now = Date.now();
+		console.log(now);
+
+		const button = document.querySelector('button');
+		const time = document.querySelector('#time');
+		button.addEventListener('click', () => {
+			const clickedTime = Date.now();
+			console.log('clicked');
+			console.log(clickedTime - now);
+			time.textContent = clickedTime - now;
+		});
+	</script>
+</body>
+</html>
