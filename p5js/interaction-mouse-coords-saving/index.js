@@ -1,13 +1,22 @@
 const coords = [];
 
 function setup() {
-	createCanvas(500, 500);
+	const canvas = createCanvas(500, 500);
+	canvas.parent('sketch');
 	background('lightgoldenrodyellow');
 	angleMode(DEGREES);
-	let count = 0;
+
+	textSize(14);
+	textFont('monospace');
+	textAlign(LEFT, TOP);
+	textLeading(14 * 1.5);
 }
 
 function draw() {
+	background('lightgoldenrodyellow');
+	fill('black');
+	text('press c to log coords to console\npress s to save image', 10, 10);
+	fill('white');
 	for (let i = 0; i < coords.length; i++) {
 		rect(coords[i][0], coords[i][1], 10, -20);
 	}
