@@ -15,6 +15,11 @@
 			justify-content: center;
 			align-items: center;
 		}
+		main {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+		}
 	</style>
 	<script src="/public/js/p5.min.js"></script>
 	<script src="index.js"></script>
@@ -22,7 +27,16 @@
 </head>
 
 <body>
-	<div id="sketch"></div>
+	<main>
+		<div id="sketch"></div>
+		<a href="index.js">source code</a>
+	</main>
+	<script>
+    const path = window.location.pathname;
+    console.log(path);
+    const folders = path.split('/').filter((p) => p !== '');
+    document.title = folders[folders.length - 1];
+  </script>
 
 	</body>
 

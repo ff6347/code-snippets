@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<title>sprite anim</title>
+		<title>repl.it</title>
 		<link href="style.css" rel="stylesheet" type="text/css" />
 		<script src="/public/js/p5.min.js"></script>
 	</head>
@@ -11,5 +11,12 @@
 	<body>
 		<div id="sketch"></div>
 		<script src="sketch.js"></script>
+		<script>
+			const path = window.location.pathname;
+			console.log(path);
+			const folders = path.split('/').filter((p) => p !== '');
+			document.title = folders[folders.length - 1];
+		</script>
+
 	</body>
 </html>

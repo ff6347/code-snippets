@@ -31,6 +31,13 @@
 		<div id="sketch"></div>
 		<a href="index.js">source code</a>
 	</main>
+	<script>
+    const path = window.location.pathname;
+    console.log(path);
+    const folders = path.split('/').filter((p) => p !== '');
+    document.title = folders[folders.length - 1];
+  </script>
+
 	</body>
 
 </html>
