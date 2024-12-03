@@ -5,11 +5,9 @@
 // @ts-check
 // Keep these comments above alive. They will help you while writing code.
 
-// !HINT: This is only example code to get you started. You don't need to use it. 
+// !HINT: This is only example code to get you started. You don't need to use it.
 
 // this is analogous
-
-
 
 function setup() {
 	//randomSeed(42);
@@ -18,7 +16,7 @@ function setup() {
 	const canvas = createCanvas(400 * scaler, 225 * scaler);
 	canvas.parent("sketch");
 	colorMode(HSB, 360, 100, 100, 100);
-	let angle = 0
+	let angle = 0;
 	let angleStep = 30;
 	let sat = 40;
 	let saturationStep = 0;
@@ -37,7 +35,6 @@ function setup() {
 		light += lightnessStep;
 		i++;
 	}
-
 
 	noStroke();
 	// display the colors

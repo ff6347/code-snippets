@@ -3,7 +3,7 @@ let t = 0;
 
 function setup() {
 	const canvas = createCanvas(100, 100);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 }
 
 function draw() {
@@ -12,13 +12,11 @@ function draw() {
 	// Ease in using quadratic equation (t^2)
 	t += 0.01;
 
-
-
 	// Linear (no ease)
 	//x = t * width;
 
 	// Quadratic
-		// x = t * t * width; // same as below
+	// x = t * t * width; // same as below
 	// x = pow(t, 2) * width;
 
 	// Cubic
@@ -29,7 +27,7 @@ function draw() {
 	// x = pow(t, 4) * width;
 
 	// Quintic
-	 x = pow(t, 5) * width;
+	x = pow(t, 5) * width;
 
 	// Sine based
 	// x = (1 - cos(t * PI / 2)) * width;

@@ -14,12 +14,12 @@ let sprites;
 
 function preload() {
 	// preload runs once
-	sprites = loadImage('./data/sprite.png');
+	sprites = loadImage("./data/sprite.png");
 }
 function setup() {
 	// setup runs once
 	const canvas = createCanvas(100, 100);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 	background(128);
 	const imageWidth = sprites.width;
 	let x = 0;

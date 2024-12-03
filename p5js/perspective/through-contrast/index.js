@@ -11,19 +11,19 @@ function setup() {
 	fill(60);
 	rect(0, 0, width, s(0.37));
 	rectMode(CENTER);
-	fill('black');
+	fill("black");
 
 	rect(x(0.3), y(0.6), s(0.3), s(0.33));
 
-	fill('white');
+	fill("white");
 	rect(x(0.7), y(0.6), s(0.3), s(0.33));
 }
 
 function draw() {}
 
 function keyPressed() {
-	if (key === 's') {
-		const name = prompt('Enter name', `out-${Date.now()}.png`);
+	if (key === "s") {
+		const name = prompt("Enter name", `out-${Date.now()}.png`);
 		save(name);
 	}
 }

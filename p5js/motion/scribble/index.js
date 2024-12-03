@@ -10,12 +10,12 @@ let handleOffset = 10;
 
 function setup() {
 	const canvas = createCanvas(100, 100);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 	x = random(width);
 	y = random(height);
 	px = random(width);
 	py = random(height);
-	stroke('black');
+	stroke("black");
 	noFill();
 }
 
@@ -44,13 +44,13 @@ function draw() {
 }
 
 function keyPressed() {
-	if (key === 's') {
+	if (key === "s") {
 		save(`out-${Date.now()}.png`);
 	}
 }
 
 function keyPressed() {
-	if (key === 's') {
+	if (key === "s") {
 		save(`out-${Date.now()}.png`);
 	}
 }

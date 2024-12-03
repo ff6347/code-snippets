@@ -3,20 +3,20 @@ const y = (n) => height * n;
 const s = (n) => (height > width ? height * n : width * n);
 function setup() {
 	const canvas = createCanvas(100, 100);
-	canvas.parent('sketch');
-	background('lightgoldenrodyellow');
+	canvas.parent("sketch");
+	background("lightgoldenrodyellow");
 	const horizonY = y(0.55);
 	const unitX = width / 10;
 	const unitY = height / 10;
 	// sun
 	strokeWeight(s(0.035));
-	stroke('orange');
-	fill('coral');
+	stroke("orange");
+	fill("coral");
 	circle(x(0.25), horizonY - y(0.05), unitX * 2);
 	noStroke();
 	// house
 	noStroke();
-	fill('lavender');
+	fill("lavender");
 	const houseWidth = unitX * 4;
 
 	rect(x(0.3), horizonY - y(0.1), houseWidth, unitY * 2);
@@ -31,7 +31,7 @@ function setup() {
 		x(0.3) + houseWidth,
 		horizonY - y(0.1),
 	);
-	fill('lightgrey');
+	fill("lightgrey");
 	triangle(
 		x(0.3) + houseWidth - unitX / 2,
 		horizonY - y(0.1) - unitY,
@@ -43,19 +43,19 @@ function setup() {
 	rect(x(0.3) + houseWidth - unitX, horizonY - y(0.1), unitX, unitY * 2);
 	// land
 	noStroke();
-	fill('darkseagreen');
+	fill("darkseagreen");
 	rect(x(0), horizonY, width, height);
 	// light & shadow
-	stroke('lavenderblush');
+	stroke("lavenderblush");
 	strokeWeight(1);
 	line(0, horizonY, x(0.6), horizonY);
-	stroke('lightgrey');
+	stroke("lightgrey");
 	strokeWeight(1);
 	line(x(0.6), horizonY, x(1), horizonY);
 }
 function keyPressed() {
-	if (key === 's') {
-		const name = prompt('Enter name', `out-${Date.now()}.png`);
+	if (key === "s") {
+		const name = prompt("Enter name", `out-${Date.now()}.png`);
 		save(name);
 	}
 }

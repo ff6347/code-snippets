@@ -1,7 +1,7 @@
 function setup() {
 	smooth();
 	const canvas = createCanvas(700, 200);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 	colorMode(HSL, 360, 100, 100, 100);
 	const color1 = color(230, 60, 60);
 	const color2 = color(330, 60, 60);
@@ -12,22 +12,22 @@ function setup() {
 		steps,
 	);
 	console.log(palette);
-	background('white');
-	textFont('Bradley Hand', 90);
+	background("white");
+	textFont("Bradley Hand", 90);
 	textSize(90);
-	fill('white');
+	fill("white");
 	textAlign(CENTER, CENTER);
 
 	for (let i = palette.length - 1; i >= 0; i--) {
 		// const h = 330 - i * 20;
 		// console.log({ h });
 		if (i === 0) {
-			fill('WHITE');
+			fill("WHITE");
 		} else {
 			fill(palette[i]);
 			// filter(BLUR, map(i, 5, 0, 0.3, 0));
 		}
-		text('interaction baby!', width / 2 + i * 2, height / 2 + i * 2);
+		text("interaction baby!", width / 2 + i * 2, height / 2 + i * 2);
 	}
 }
 

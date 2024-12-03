@@ -17,8 +17,8 @@ function setup() {
 	let colorincrement = 10;
 	for (let y = diam / 2; y < height; y = y + diam) {
 		for (let x = diam / 2; x < width; x = x + diam) {
-			fill((colorincrement + random(70))%255, 100);
-			
+			fill((colorincrement + random(70)) % 255, 100);
+
 			colorincrement += 10;
 			circle(x, y, random(diam));
 			circle(x, y, random(diam));
@@ -30,9 +30,9 @@ function setup() {
 			rect(x + random(-1, 1), y + random(-1, 1), diam);
 			// circle(x, y, random(diam));
 			push();
-			stroke(255,50);
+			stroke(255, 50);
 			strokeWeight(0.5);
-			
+
 			circle(x, y, random(diam, diam + 1));
 			pop();
 		}

@@ -1,13 +1,13 @@
 function setup() {
 	createCanvas(300, 300);
 	const colorPostion = 0.5;
-	let spectralColor = color(spectral.mix('#00357B', '#D79900', colorPostion));
+	let spectralColor = color(spectral.mix("#00357B", "#D79900", colorPostion));
 
-	const spectralColors = [color('#00357B'), spectralColor, color('#D79900')];
+	const spectralColors = [color("#00357B"), spectralColor, color("#D79900")];
 
-	let p5Color = lerpColor(color('#00357B'), color('#D79900'), colorPostion);
+	let p5Color = lerpColor(color("#00357B"), color("#D79900"), colorPostion);
 
-	const p5Colors = [color('#00357B'), p5Color, color('#D79900')];
+	const p5Colors = [color("#00357B"), p5Color, color("#D79900")];
 	console.log({ spectralColor, p5Color });
 	const step = width / spectralColors.length;
 	for (let i = 0; i < spectralColors.length; i++) {
@@ -25,7 +25,7 @@ function setup() {
 function draw() {}
 
 function keyPressed() {
-	if (key === 's') {
+	if (key === "s") {
 		const name = `out-${Date.now()}.png`;
 		save(name);
 	}

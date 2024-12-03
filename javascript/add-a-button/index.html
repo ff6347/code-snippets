@@ -1,47 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="/public/images/favicon.svg" type="image/svg+xml">
-	<title>Document</title>
-	<style>
-		html, body {
-			height: 100%;
-		}
-		body {
-			height: 100%;
-		}
-		#buttons {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			gap: 10px;
-		}
-	</style>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="/public/images/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<title>Document</title>
+		<style>
+			html,
+			body {
+				height: 100%;
+			}
+			body {
+				height: 100%;
+			}
+			#buttons {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				gap: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="buttons"><button id="b1">add</button></div>
 
-	<div id="buttons"><button id="b1">add</button>
-	</div>
+		<script>
+			const button = document.querySelector("button#b1");
+			const buttonsElement = document.querySelector("div#buttons");
+			const clickHandler = () => {
+				console.log("clicked");
+				count++;
+				const newButton = document.createElement("button");
+				newButton.id = `b${count}`;
+				newButton.textContent = "add";
+				buttonsElement.appendChild(newButton);
+				newButton.addEventListener("click", clickHandler);
+			};
 
-	<script>
-
-		const button = document.querySelector('button#b1');
-		const buttonsElement = document.querySelector('div#buttons');
-		const clickHandler =  () => {
-			console.log('clicked');
-			count++;
-			const newButton = document.createElement('button');
-			newButton.id = `b${count}`;
-			newButton.textContent = 'add';
-			buttonsElement.appendChild(newButton);
-			newButton.addEventListener('click',clickHandler);
-		}
-
-
-		let count = 1;
-		button.addEventListener('click',clickHandler);
-	</script>
-</body>
+			let count = 1;
+			button.addEventListener("click", clickHandler);
+		</script>
+	</body>
 </html>

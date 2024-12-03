@@ -2,7 +2,7 @@ let isInside = false;
 const gutter = 25;
 function setup() {
 	const canvas = createCanvas(100, 100);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 }
 
 function draw() {
@@ -15,10 +15,10 @@ function draw() {
 		mouseY > gutter &&
 		mouseY < rh + gutter
 	) {
-		fill('red');
+		fill("red");
 		isInside = true;
 	} else {
-		fill('black');
+		fill("black");
 		isInside = false;
 	}
 	rect(gutter, gutter, rw, rh);
@@ -30,8 +30,8 @@ function keyPressed() {
 
 function keyTyped() {
 	console.log(`key is ${key} in keyTyped`);
-	if (key === 's') {
-		saveCanvas('outfile-' + Date.now(), 'png');
+	if (key === "s") {
+		saveCanvas("outfile-" + Date.now(), "png");
 	}
 }
 
@@ -41,6 +41,6 @@ function keyReleased() {
 
 function mousePressed() {
 	if (isInside) {
-		console.log('clicked the rect');
+		console.log("clicked the rect");
 	}
 }

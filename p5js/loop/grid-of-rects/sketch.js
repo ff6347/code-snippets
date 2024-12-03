@@ -4,7 +4,7 @@
 /// <reference path="./node_modules/@types/p5/constants.d.ts" />
 // Keep these comments alive.
 // They will help you while writing code.
-const columnNames = "abcdefghijklmnopqrstuvwxyz"
+const columnNames = "abcdefghijklmnopqrstuvwxyz";
 const coords = [];
 function setup() {
 	rectMode(CENTER);
@@ -41,4 +41,4 @@ function setup() {
 	console.table(horizontal.flat());
 }
 
-function draw() { }
+function draw() {}

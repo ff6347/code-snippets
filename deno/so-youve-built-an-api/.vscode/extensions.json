@@ -1,7 +1,7 @@
 {
-  "recommendations": [
-    "denoland.vscode-deno",
-    "ritwickdey.liveserver",
-    "humao.rest-client"
-  ]
+	"recommendations": [
+		"denoland.vscode-deno",
+		"ritwickdey.liveserver",
+		"humao.rest-client"
+	]
 }

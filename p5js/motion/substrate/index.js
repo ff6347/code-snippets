@@ -8,7 +8,7 @@ function setup() {
 substrate
 processing\tjune, 2003\tj.tarbell`);
 	const canvas = createCanvas(100, 100);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 	background(255);
 	stroke(0); // Semi-transparent black
 	strokeWeight(0.5);

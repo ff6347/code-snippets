@@ -4,8 +4,8 @@ let x = -50;
 let y = 100;
 
 function preload() {
-	const img1 = loadImage('./data/cat-1.png');
-	const img2 = loadImage('./data/cat-2.png');
+	const img1 = loadImage("./data/cat-1.png");
+	const img2 = loadImage("./data/cat-2.png");
 	// images.push(img1);
 	// images.push(img2);
 	images = [img1, img2];
@@ -13,12 +13,12 @@ function preload() {
 
 function setup() {
 	const canvas = createCanvas(200, 200);
-	canvas.parent('sketch');
-	background('white');
+	canvas.parent("sketch");
+	background("white");
 }
 
 function draw() {
-	background('white');
+	background("white");
 
 	if (frameCount % 12 === 0) {
 		toggle = !toggle;
@@ -37,8 +37,8 @@ function draw() {
 }
 
 function keyPressed() {
-	if (key === 's') {
-		const name = prompt('Save image as:', `out-${Date.now()}.png`);
+	if (key === "s") {
+		const name = prompt("Save image as:", `out-${Date.now()}.png`);
 		if (name) save(name);
 	}
 }

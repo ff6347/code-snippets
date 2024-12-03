@@ -4,7 +4,7 @@ let a = 0;
 function setup() {
 	colorMode(HSL, 360, 100, 100, 100);
 	const canvas = createCanvas(500, 500);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 	strokeWeight(0.4);
 	rectMode(CENTER);
 	angleMode(DEGREES);

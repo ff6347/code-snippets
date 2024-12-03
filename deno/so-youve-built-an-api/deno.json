@@ -1,8 +1,8 @@
 {
-  "tasks": {
-    "dev": "deno run --watch main.ts"
-  },
-  "fmt": {
-    "useTabs": true
-  }
+	"tasks": {
+		"dev": "deno run --watch main.ts"
+	},
+	"fmt": {
+		"useTabs": true
+	}
 }

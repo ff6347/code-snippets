@@ -2,33 +2,33 @@
 
 // Function to create a Markov chain
 function createMarkovChain(text) {
-  let words = text.split(" ");
-  let markovChain = {};
+	let words = text.split(" ");
+	let markovChain = {};
 
-  for (let i = 0; i < words.length; i++) {
-    let word = words[i].toLowerCase();
-    if (!markovChain[word]) {
-      markovChain[word] = [];
-    }
-    if (words[i + 1]) {
-      markovChain[word].push(words[i + 1].toLowerCase());
-    }
-  }
+	for (let i = 0; i < words.length; i++) {
+		let word = words[i].toLowerCase();
+		if (!markovChain[word]) {
+			markovChain[word] = [];
+		}
+		if (words[i + 1]) {
+			markovChain[word].push(words[i + 1].toLowerCase());
+		}
+	}
 
-  return markovChain;
+	return markovChain;
 }
 
 // Function to generate new text from the Markov chain
 function generateText(markovChain, startWord, wordCount) {
-  let words = [startWord];
+	let words = [startWord];
 
-  for (let i = 0; i < wordCount; i++) {
-    let wordArray = markovChain[words[i]];
-    let nextWord = wordArray[Math.floor(Math.random() * wordArray.length)];
-    words.push(nextWord);
-  }
+	for (let i = 0; i < wordCount; i++) {
+		let wordArray = markovChain[words[i]];
+		let nextWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+		words.push(nextWord);
+	}
 
-  return words.join(" ");
+	return words.join(" ");
 }
 
 // Example usage

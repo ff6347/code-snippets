@@ -1,36 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="/public/images/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<title>Document</title>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="/public/images/favicon.svg" type="image/svg+xml">
-	<title>Document</title>
+		<link rel="stylesheet" href="/public/css/reset.css" />
 
-	<link rel="stylesheet" href="/public/css/reset.css">
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+		<script src="/public/js/p5.min.js"></script>
+		<script src="index.js"></script>
+	</head>
 
-	<style>
-		body {
-			height: 100vh;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-	</style>
-	<script src="/public/js/p5.min.js"></script>
-	<script src="index.js"></script>
-
-</head>
-
-<body>
-	<div id="sketch"></div>
-	<script>
-    const path = window.location.pathname;
-    console.log(path);
-    const folders = path.split('/').filter((p) => p !== '');
-    document.title = folders[folders.length - 1];
-  </script>
-
+	<body>
+		<div id="sketch"></div>
+		<script>
+			const path = window.location.pathname;
+			console.log(path);
+			const folders = path.split("/").filter((p) => p !== "");
+			document.title = folders[folders.length - 1];
+		</script>
 	</body>
-
 </html>

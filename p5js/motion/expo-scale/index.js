@@ -4,7 +4,7 @@ let s = 1;
 let w = 1;
 function setup() {
 	const canvas = createCanvas(100, 100);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 	x = width / 2;
 	y = height / 2;
 	// saveGif("out.gif", 3)
@@ -22,7 +22,7 @@ function draw() {
 }
 
 function keyPressed() {
-	if (key === 's') {
+	if (key === "s") {
 		save(`out-${Date.now()}.png`);
 	}
 }

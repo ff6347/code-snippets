@@ -8,10 +8,10 @@ const images = [];
 let imageIndex = 0;
 function preload() {
 	img = loadImage(
-		'https://hbk-bs.github.io/the-archives-ff6347/assets/images/ff6347-icon-512x512.webp',
+		"https://hbk-bs.github.io/the-archives-ff6347/assets/images/ff6347-icon-512x512.webp",
 	);
 
-	img3 = loadImage('./cat-1.png');
+	img3 = loadImage("./cat-1.png");
 
 	images.push(img);
 	images.push(img3);
@@ -23,7 +23,7 @@ function setup() {
 
 function draw() {
 	if (mouseX > 100 && mouseX < 130 && mouseY > 100 && mouseY < 130) {
-		console.log('in');
+		console.log("in");
 		rect(100, 100, 30, 30);
 		// isInside = true;
 		imageIndex = 1;
@@ -40,7 +40,7 @@ function draw() {
 }
 
 function keyPressed() {
-	if (key === 's') {
+	if (key === "s") {
 		save(`out-${Date.now()}.png`);
 	}
 }

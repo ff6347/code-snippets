@@ -6,7 +6,7 @@ function setup() {
 	createCanvas(250, 250);
 	colorMode(HSL, 360, 100, 100, 100);
 	rectMode(CENTER);
-	background('black');
+	background("black");
 	push();
 	translate(x(0.5), y(0.5));
 	fill(0, 50, 50);

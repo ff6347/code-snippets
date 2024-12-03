@@ -2,14 +2,14 @@ let img;
 const numberOfSectors = 16;
 function preload() {
 	// preload runs once
-	img = loadImage('assets/buddah.png');
+	img = loadImage("assets/buddah.png");
 }
 
 function setup() {
 	ellipseMode(CORNER);
 	// setup runs once
 	const canvas = createCanvas(256, 256);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 	background(255);
 	// load the pixels of the image
 	img.loadPixels();

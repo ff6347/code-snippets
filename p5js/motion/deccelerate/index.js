@@ -8,7 +8,7 @@ let x = -radius;
 let deccel = 10;
 function setup() {
 	const canvas = createCanvas(100, 100);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 }
 
 function draw() {
