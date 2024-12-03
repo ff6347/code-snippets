@@ -6,9 +6,35 @@ import ghlight from "https://esm.sh/shiki/themes/github-light-default.mjs";
 
 export default async function handler(request: Request, context: Context) {
 	const url = new URL(request.url);
-	const path = url.pathname;
+	let path = url.pathname;
+	if (path.endsWith("/")) {
+		path += "index.html";
+	}
+
 	const ext = path.split(".").pop();
 	const isDirectAccess = request.headers.get("accept")?.includes("text/html");
+
+	if (ext === "html") {
+		try {
+			const response = await context.next();
+			if (!response.ok) return response;
+			const content = await response.clone().text();
+			const injectedContent = content.replace(
+				"</head>",
+				`<style>
+ body {
+/* Geometric Humanist */
+font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+font-weight: normal; }</style></head>`
+			);
+			return new Response(injectedContent, {
+				headers: { "Content-Type": "text/html" },
+			});
+		} catch (error) {
+			console.error("Error:", error);
+			return new Response("File not found", { status: 404 });
+		}
+	}
 
 	// Only process js and css files
 	if (ext !== "js" && ext !== "css") {
@@ -38,6 +64,14 @@ export default async function handler(request: Request, context: Context) {
 				`<!DOCTYPE html>
         <html>
           <head>
+						<meta charset="UTF-8" />
+								<link
+			rel="shortcut icon"
+			href="/public/images/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>${path}</title>
             <style>
               body { margin: 0; padding: 20px; max-width: 800px;}
 							pre,
@@ -67,7 +101,7 @@ font-weight: normal;
         </html>`,
 				{
 					headers: { "Content-Type": "text/html" },
-				},
+				}
 			);
 		}
 
