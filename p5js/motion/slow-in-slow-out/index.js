@@ -1,7 +1,7 @@
 function setup() {
 	const canvas = createCanvas(500, 500);
-	canvas.parent('sketch');
-	background('white');
+	canvas.parent("sketch");
+	background("white");
 	angleMode(DEGREES);
 	const step = 10;
 	const radius = 20;
@@ -17,7 +17,7 @@ function setup() {
 function draw() {}
 
 function keyPressed() {
-	if (key === 's') {
+	if (key === "s") {
 		save(`out-${Date.now()}.png`);
 	}
 }

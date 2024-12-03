@@ -89,9 +89,9 @@ class Area {
 
 		translate(this.x, this.y);
 		if (this.topIsDark) {
-			fill('black');
+			fill("black");
 		} else {
-			fill('white');
+			fill("white");
 		}
 
 		triangle(
@@ -103,9 +103,9 @@ class Area {
 			this.size / 2,
 		);
 		if (this.bottomIsDark) {
-			fill('black');
+			fill("black");
 		} else {
-			fill('white');
+			fill("white");
 		}
 
 		triangle(
@@ -123,7 +123,7 @@ class Area {
 const areas = [];
 function setup() {
 	const canvas = createCanvas(400, 400);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 	background(128);
 	const areaSize = 20;
 	for (let x = areaSize / 2; x < width; x += areaSize) {
@@ -153,7 +153,7 @@ function mousePressed() {
 }
 
 function keyPressed() {
-	if (key === 's') {
+	if (key === "s") {
 		const name = `out-${Date.now()}.png`;
 
 		save(name);

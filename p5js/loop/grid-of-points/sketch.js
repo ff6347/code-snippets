@@ -24,5 +24,5 @@ function draw() {
 }
 
 function keyPressed() {
-	if(key === "s") save("multiples.png");
+	if (key === "s") save("multiples.png");
 }

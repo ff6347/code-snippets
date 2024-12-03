@@ -1,9 +1,9 @@
 /** @type {Record<string, Record<string,number>>} */
 let data;
-const alphabet = 'abcdefghijklmnopqrstuvwxyz'; // Simplified alphabet
+const alphabet = "abcdefghijklmnopqrstuvwxyz"; // Simplified alphabet
 let maxProbability = 0;
 function preload() {
-	data = loadJSON('map-dataset.json', (dataset) => {
+	data = loadJSON("map-dataset.json", (dataset) => {
 		Object.keys(data).forEach(function (key) {
 			const item = data[key];
 			Object.keys(item).forEach(function (subKey) {

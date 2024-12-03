@@ -6,12 +6,12 @@ let radius = 100;
 function setup() {
 	const canvas = createCanvas(500, 500);
 	colorMode(HSL, 360, 100, 100, 100);
-	canvas.parent('sketch');
-	stroke('black');
+	canvas.parent("sketch");
+	stroke("black");
 	noFill();
 	centerX = width / 2;
 	centerY = height / 2;
-	background('white');
+	background("white");
 
 	createAdventskranz();
 	createAdventskranz();
@@ -54,7 +54,7 @@ function createAdventskranz() {
 }
 
 function keyPressed() {
-	if (key === 's') {
+	if (key === "s") {
 		save(`out-${Date.now()}.png`);
 	}
 }

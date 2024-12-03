@@ -24,8 +24,8 @@ function label(txt, x, y) {
 
 function setup() {
 	const canvas = createCanvas(100, 100);
-	canvas.parent("sketch")
-	textFont("monospace")
+	canvas.parent("sketch");
+	textFont("monospace");
 	noStroke();
 	fill(hexColor);
 	const rectHeight = height / 4;
@@ -70,7 +70,7 @@ function setup() {
 	rect(0, rectHeight * 3, width / 2, rectHeight);
 	const tertiaryColor = color((h + 200 * 200) % 360, s, br);
 	fill(tertiaryColor);
-	console.log("tertiaryColor", tertiaryColor)
+	console.log("tertiaryColor", tertiaryColor);
 	rect(width / 2, rectHeight * 3, width / 2, rectHeight);
 }
 

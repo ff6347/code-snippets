@@ -1,1 +1,1 @@
-npm run build && git add index.html
+npm run build:local && git add index.html

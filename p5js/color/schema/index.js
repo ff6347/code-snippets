@@ -1,6 +1,6 @@
 function setup() {
 	const canvas = createCanvas(100, 100);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 	colorMode(HSB);
 	const h = 330;
 	const sat = 50;
@@ -24,8 +24,8 @@ function onResize() {
 	// resizeCanvas(windowWidth, windowHeight);
 }
 function keyPressed() {
-	if (key === 's') {
-		const name = prompt('Enter name', `out-${Date.now()}.png`);
+	if (key === "s") {
+		const name = prompt("Enter name", `out-${Date.now()}.png`);
 		save(name);
 	}
 }

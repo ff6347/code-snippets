@@ -3,7 +3,7 @@ function setup() {
 	// this is function scope
 	// setup is executed once
 	createCanvas(500, 500);
-	background('black');
+	background("black");
 	const step = 25;
 
 	// noStroke();

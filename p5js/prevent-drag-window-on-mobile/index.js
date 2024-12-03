@@ -1,7 +1,7 @@
 // Prevent dragging the window on mobile
 
 document.addEventListener(
-	'touchmove',
+	"touchmove",
 	(e) => {
 		e.preventDefault();
 	},
@@ -45,12 +45,12 @@ const particles = [];
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	background('lightgoldenrodyellow');
+	background("lightgoldenrodyellow");
 	colorMode(HSB, 360, 100, 100, 100);
 }
 
 function draw() {
-	background('lightgoldenrodyellow');
+	background("lightgoldenrodyellow");
 	particles.forEach((particle) => {
 		particle.draw();
 		particle.update();

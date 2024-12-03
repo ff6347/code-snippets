@@ -1,94 +1,98 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/public/images/favicon.svg" type="image/svg+xml">
-    <title>Document</title>
-    <script src="/public/js/p5.min.js"></script>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-    </style>
-  </head>
-  <body>
-    <script>
-      function setup() {
-        createCanvas(600, 600);
-        background("#ff6347");
-        push();
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="/public/images/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<title>Document</title>
+		<script src="/public/js/p5.min.js"></script>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			function setup() {
+				createCanvas(600, 600);
+				background("#ff6347");
+				push();
 
-        translate(width / 2, height / 2);
+				translate(width / 2, height / 2);
 
-        // create x-axis
-        stroke(20);
-        strokeWeight(0.7);
-        line(-width / 2, 0, width / 2, 0);
-        // create y-axis
-        line(0, -height / 2, 0, height / 2);
-        // create grid
+				// create x-axis
+				stroke(20);
+				strokeWeight(0.7);
+				line(-width / 2, 0, width / 2, 0);
+				// create y-axis
+				line(0, -height / 2, 0, height / 2);
+				// create grid
 
-        for (let i = -width / 2; i < width / 2; i += 20) {
-          line(i, -5, i, 5);
-        }
-        // create y-axis grid
-        for (let i = -height / 2; i < height / 2; i += 20) {
-          line(-5, i, 5, i);
-        }
-        // position words in semantic space
-        let words = [
-          // Pets (Quadrant I)
-          { x: 10, y: 15, word: "cat" },
-          { x: 15, y: 10, word: "dog" },
+				for (let i = -width / 2; i < width / 2; i += 20) {
+					line(i, -5, i, 5);
+				}
+				// create y-axis grid
+				for (let i = -height / 2; i < height / 2; i += 20) {
+					line(-5, i, 5, i);
+				}
+				// position words in semantic space
+				let words = [
+					// Pets (Quadrant I)
+					{ x: 10, y: 15, word: "cat" },
+					{ x: 15, y: 10, word: "dog" },
 
-          // Wild and large animals (Quadrant II)
-          { x: -20, y: 20, word: "tiger" },
-          { x: -25, y: 35, word: "lion" },
-          { x: -30, y: 40, word: "elephant" },
-          { x: -35, y: 45, word: "giraffe" },
-          { x: -40, y: 50, word: "monkey" },
+					// Wild and large animals (Quadrant II)
+					{ x: -20, y: 20, word: "tiger" },
+					{ x: -25, y: 35, word: "lion" },
+					{ x: -30, y: 40, word: "elephant" },
+					{ x: -35, y: 45, word: "giraffe" },
+					{ x: -40, y: 50, word: "monkey" },
 
-          // Reptiles (Quadrant III)
-          { x: -60, y: -60, word: "snake" },
-          { x: -65, y: -75, word: "alligator" },
-          { x: -70, y: -80, word: "kaiman" },
+					// Reptiles (Quadrant III)
+					{ x: -60, y: -60, word: "snake" },
+					{ x: -65, y: -75, word: "alligator" },
+					{ x: -70, y: -80, word: "kaiman" },
 
-          // Fruits (Quadrant IV)
-          { x: 80, y: -90, word: "avocado" },
-          { x: 85, y: -95, word: "apple" },
-          { x: 90, y: -100, word: "banana" },
-          { x: 95, y: -105, word: "mango" },
-          { x: 80, y: -110, word: "strawberry" },
+					// Fruits (Quadrant IV)
+					{ x: 80, y: -90, word: "avocado" },
+					{ x: 85, y: -95, word: "apple" },
+					{ x: 90, y: -100, word: "banana" },
+					{ x: 95, y: -105, word: "mango" },
+					{ x: 80, y: -110, word: "strawberry" },
 
-          // Roaming animals (Quadrant I/IV border)
-          { x: 8, y: 20, word: "wolf" },
-          { x: 7, y: 25, word: "fox" },
-          { x: 10, y: -30, word: "bear" },
+					// Roaming animals (Quadrant I/IV border)
+					{ x: 8, y: 20, word: "wolf" },
+					{ x: 7, y: 25, word: "fox" },
+					{ x: 10, y: -30, word: "bear" },
 
-          // Domestic animals (Quadrant II/III border)
-          { x: -40, y: 0, word: "horse" },
-          { x: -45, y: 10, word: "cow" },
-          { x: -50, y: -10, word: "sheep" },
-        ];
-        fill(25);
+					// Domestic animals (Quadrant II/III border)
+					{ x: -40, y: 0, word: "horse" },
+					{ x: -45, y: 10, word: "cow" },
+					{ x: -50, y: -10, word: "sheep" },
+				];
+				fill(25);
 
-        noStroke();
-        textSize(16);
-        textFont("monospace");
-        for (let i = 0; i < words.length; i++) {
-          let x = words[i].x * 2;
-          let y = words[i].y * 2;
-          text(words[i].word, x, y);
-        }
+				noStroke();
+				textSize(16);
+				textFont("monospace");
+				for (let i = 0; i < words.length; i++) {
+					let x = words[i].x * 2;
+					let y = words[i].y * 2;
+					text(words[i].word, x, y);
+				}
 
-        pop();
-      }
-    </script>
-  </body>
+				pop();
+			}
+		</script>
+	</body>
 </html>

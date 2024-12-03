@@ -1,51 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="/public/images/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<title>Document</title>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="/public/images/favicon.svg" type="image/svg+xml">
-	<title>Document</title>
+		<link rel="stylesheet" href="/public/css/reset.css" />
 
-	<link rel="stylesheet" href="/public/css/reset.css">
+		<style>
+			html,
+			body {
+				height: 100%;
+			}
 
-	<style>
-		html,
-		body {
-			height: 100%;
-		}
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
 
-		body {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
+			main {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: flex-end;
+			}
+		</style>
+		<script src="/public/js/p5.min.js"></script>
+		<script src="index.js"></script>
+	</head>
 
-		main {
-			height: 100%;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: flex-end;
-		}
-	</style>
-	<script src="/public/js/p5.min.js"></script>
-	<script src="index.js"></script>
-
-</head>
-
-<body>
-	<main>
-		<div id="sketch"></div>
-		<a href="index.js">source code</a>
-	</main>
-	<script>
-    const path = window.location.pathname;
-    console.log(path);
-    const folders = path.split('/').filter((p) => p !== '');
-    document.title = folders[folders.length - 1];
-  </script>
-
+	<body>
+		<main>
+			<div id="sketch"></div>
+			<a href="index.js">source code</a>
+		</main>
+		<script>
+			const path = window.location.pathname;
+			console.log(path);
+			const folders = path.split("/").filter((p) => p !== "");
+			document.title = folders[folders.length - 1];
+		</script>
 	</body>
-
 </html>

@@ -14,14 +14,14 @@ for (const item in object) {
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while
 const condition = false;
 while (condition) {
-  // warning: infinite loop if the condition is always true
-  // make sure to have a way to break the loop
+	// warning: infinite loop if the condition is always true
+	// make sure to have a way to break the loop
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while
 const doCondition = false;
 do {
-  // warning: infinite loop if the condition is always true
+	// warning: infinite loop if the condition is always true
 } while (doCondition);
 
 // And even more when working with arrays

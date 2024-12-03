@@ -1,70 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="/public/images/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<title>flexbox flex-wrap</title>
+		<style>
+			html {
+				font-size: 18px;
+				font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
+					source-sans-pro, sans-serif;
+				font-weight: normal;
+			}
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="/public/images/favicon.svg" type="image/svg+xml">
-	<title>flexbox flex-wrap</title>
-	<style>
-		html {
-			font-size: 18px;
-			font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
-			font-weight: normal;
-		}
+			main {
+				display: flex;
+				flex-direction: column;
+				justify-content: start;
+				align-items: center;
+				height: 100vh;
+				gap: 1rem;
+			}
+			.row {
+				display: flex;
+				justify-content: start;
+				align-items: center;
+				border: 1px solid #f06;
+			}
 
-		main {
-			display: flex;
-			flex-direction: column;
-			justify-content: start;
-			align-items: center;
-			height: 100vh;
-			gap: 1rem;
-		}
-		.row {
-			display: flex;
-			justify-content: start;
-			align-items: center;
-			border: 1px solid #f06;
-		}
+			.dimension {
+				width: 500px;
+			}
 
-		.dimension {
-			width: 500px;
-		}
+			.with-wrap {
+				flex-wrap: wrap;
+			}
+			.box {
+				min-width: 100px;
+				min-height: 100px;
+				background-color: #f06;
+				margin: 1rem;
+			}
+		</style>
+	</head>
 
-		.with-wrap {
-			flex-wrap: wrap;
-		}
-		.box {
-			min-width: 100px;
-			min-height: 100px;
-			background-color: #f06;
-			margin: 1rem;
-		}
-	</style>
-</head>
-
-<body>
-
-	<main>
-		<p>This row has the default <code>flex-wrap: no-wrap;</code> The boxes run out of space</p>
-		<div class="row dimension">
-			<div class="box"></div>
-			<div class="box"></div>
-			<div class="box"></div>
-			<div class="box"></div>
-			<div class="box"></div>
-		</div>
-		<p>This row has <code>flex-wrap: wrap;</code> the boxes wrap around and resize their container</p>
-		<div class="row dimension with-wrap">
-			<div class="box"></div>
-			<div class="box"></div>
-			<div class="box"></div>
-			<div class="box"></div>
-			<div class="box"></div>
-		</div>
-	</main>
-
-</body>
-
+	<body>
+		<main>
+			<p>
+				This row has the default <code>flex-wrap: no-wrap;</code> The boxes run
+				out of space
+			</p>
+			<div class="row dimension">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+			<p>
+				This row has <code>flex-wrap: wrap;</code> the boxes wrap around and
+				resize their container
+			</p>
+			<div class="row dimension with-wrap">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+		</main>
+	</body>
 </html>

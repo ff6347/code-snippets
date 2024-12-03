@@ -1,46 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="/public/images/favicon.svg" type="image/svg+xml">
-	<title>vanilla motion</title>
-	<style>
-		*{
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-		.box {
-			width: 100px;
-			height: 100px;
-			background-color: black;
-		}
-	</style>
-</head>
-<div class="box"></div>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="/public/images/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<title>vanilla motion</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.box {
+				width: 100px;
+				height: 100px;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<div class="box"></div>
+	<body>
+		<script>
+			// Simple motion animation
+			const element = document.querySelector(".box");
+			let position = 0;
 
-	<script>
+			function animate() {
+				// Update position
+				position += 2;
+				element.style.transform = `translateY(${position}px)`;
 
-		// Simple motion animation
-const element = document.querySelector('.box');
-let position = 0;
+				if (position > window.innerHeight - 100) {
+					position = 0;
+				}
+				// Continue animation loop
+				requestAnimationFrame(animate);
+			}
 
-function animate() {
-  // Update position
-  position += 2;
-  element.style.transform = `translateY(${position}px)`;
-
-	if(position > window.innerHeight - 100) {
-		position = 0;
-	}
-  // Continue animation loop
-  requestAnimationFrame(animate);
-}
-
-animate();
-	</script>
-
-</body>
+			animate();
+		</script>
+	</body>
 </html>

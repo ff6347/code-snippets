@@ -1,13 +1,13 @@
 let img;
 
 function preload() {
-	img = loadImage('data/kitten-300-200.jpg');
+	img = loadImage("data/kitten-300-200.jpg");
 }
 function setup() {
 	createCanvas(300, 200);
 	rectMode(CENTER);
-	stroke('white');
-	fill('black');
+	stroke("white");
+	fill("black");
 }
 
 function draw() {

@@ -27,7 +27,6 @@ function setup() {
 	mic.start();
 }
 
-
 function draw() {
 	background(bgColor);
 	if (!song.isPlaying()) {

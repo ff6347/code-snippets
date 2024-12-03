@@ -5,7 +5,7 @@ const c = 0.5 * 2;
 const d = 5 * 2;
 // The above statements can be written as:
 function timesTwo(value) {
-  return value * 2;
+	return value * 2;
 }
 
 // Arrow Functions
@@ -28,15 +28,15 @@ const timesTwo = (value) => value * 2;
 // Before we did this:
 
 function Agent(x, y) {
-  this.x = x;
-  this.y = y;
-  // make sure this function is invoked with the new keyword.
-  if (!(this instanceof Agent)) {
-    throw new Error("Constructor Agent requires 'new'");
-  }
-  this.log = function () {
-    console.log(this.x, this.y);
-  };
+	this.x = x;
+	this.y = y;
+	// make sure this function is invoked with the new keyword.
+	if (!(this instanceof Agent)) {
+		throw new Error("Constructor Agent requires 'new'");
+	}
+	this.log = function () {
+		console.log(this.x, this.y);
+	};
 }
 
 const agent = new Agent(10, 10);
@@ -45,11 +45,11 @@ agent.log();
 // Now we can do this:
 
 class Agent {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-  }
-  log() {
-    console.log(this.x, this.y);
-  }
+	constructor(x, y) {
+		this.x = x;
+		this.y = y;
+	}
+	log() {
+		console.log(this.x, this.y);
+	}
 }

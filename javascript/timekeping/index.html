@@ -1,27 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="/public/images/favicon.svg" type="image/svg+xml">
-	<title>timekeeping</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="/public/images/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<title>timekeeping</title>
+	</head>
+	<body>
+		<div id="time"></div>
+		<button>play</button>
+		<script>
+			const now = Date.now();
+			console.log(now);
 
-	<div id="time"></div>
-<button>play</button>
-	<script>
-		const now = Date.now();
-		console.log(now);
-
-		const button = document.querySelector('button');
-		const time = document.querySelector('#time');
-		button.addEventListener('click', () => {
-			const clickedTime = Date.now();
-			console.log('clicked');
-			console.log(clickedTime - now);
-			time.textContent = clickedTime - now;
-		});
-	</script>
-</body>
+			const button = document.querySelector("button");
+			const time = document.querySelector("#time");
+			button.addEventListener("click", () => {
+				const clickedTime = Date.now();
+				console.log("clicked");
+				console.log(clickedTime - now);
+				time.textContent = clickedTime - now;
+			});
+		</script>
+	</body>
 </html>

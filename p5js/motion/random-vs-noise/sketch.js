@@ -11,7 +11,7 @@ let yoff = 0.0;
 function setup() {
 	// setup runs once
 	const canvas = createCanvas(500, 100);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 	background(200);
 	y = height / 2;
 	strokeWeight(1);
@@ -32,5 +32,5 @@ function draw() {
 }
 
 function keyPressed() {
-	if (key === 's') save('noise.png');
+	if (key === "s") save("noise.png");
 }

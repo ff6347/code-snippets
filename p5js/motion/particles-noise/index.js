@@ -36,9 +36,9 @@ class Particle {
 	display() {
 		push();
 		if (this.isRandom) {
-			stroke('black');
+			stroke("black");
 		} else {
-			stroke('white');
+			stroke("white");
 		}
 		translate(this.x, this.y);
 		noFill();
@@ -83,7 +83,7 @@ let p;
 const particles = [];
 function setup() {
 	const canvas = createCanvas(500, 500);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 	angleMode(DEGREES);
 
 	for (let x = 0; x < 100; x++) {

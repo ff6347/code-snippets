@@ -8,9 +8,9 @@ let imageIndex = 0;
 function preload() {
 	// img = loadImage('./adventskranz_alpha.png');
 	img2 = loadImage(
-		'https://hbk-bs.github.io/the-archives-Annagnb/assets/images/IMG_0521.WEBP',
+		"https://hbk-bs.github.io/the-archives-Annagnb/assets/images/IMG_0521.WEBP",
 	);
-	img3 = loadImage('./adventskranz3.png');
+	img3 = loadImage("./adventskranz3.png");
 
 	// images.push(img);
 	// images.push(img2);
@@ -20,9 +20,9 @@ function preload() {
 }
 function setup() {
 	createCanvas(500, 500);
-	background('lightgoldenrodyellow');
-	const button = createButton('index 1');
-	const button2 = createButton('index 0');
+	background("lightgoldenrodyellow");
+	const button = createButton("index 1");
+	const button2 = createButton("index 0");
 
 	button.mousePressed(() => {
 		imageIndex = 1;
@@ -34,12 +34,12 @@ function setup() {
 }
 
 function draw() {
-	background('lightgoldenrodyellow');
+	background("lightgoldenrodyellow");
 	image(images[imageIndex], 0, 0);
 }
 
 function keyPressed() {
-	if (key === 's') {
+	if (key === "s") {
 		save(`out-${Date.now()}.png`);
 	}
 }

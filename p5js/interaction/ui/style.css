@@ -27,10 +27,10 @@ main > div {
 	align-self: center;
 }
 
-input[type='text'],
-input[type='number'],
-input[type='color'],
-input[type='range'] {
+input[type="text"],
+input[type="number"],
+input[type="color"],
+input[type="range"] {
 	height: 2rem;
 	width: 100%;
 	border: none;

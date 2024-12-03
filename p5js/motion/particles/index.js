@@ -19,7 +19,7 @@ class Particle {
 	}
 	display() {
 		push();
-		fill('black');
+		fill("black");
 		translate(this.x + random(-1, 100) * pow(5, 2), this.y);
 		noFill();
 		point(0, 0);
@@ -67,7 +67,7 @@ let p;
 const particles = [];
 function setup() {
 	const canvas = createCanvas(500, 500);
-	canvas.parent('sketch');
+	canvas.parent("sketch");
 	angleMode(DEGREES);
 
 	for (let x = 0; x < width; x += 5) {

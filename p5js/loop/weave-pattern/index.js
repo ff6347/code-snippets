@@ -1,7 +1,7 @@
 function setup() {
 	const canvas = createCanvas(500, 500);
-	canvas.parent('sketch');
-	background('lightgoldenrodyellow');
+	canvas.parent("sketch");
+	background("lightgoldenrodyellow");
 	angleMode(DEGREES);
 	let count = 0;
 	for (let x = 0; x < width; x += 20) {
@@ -27,7 +27,7 @@ function setup() {
 function draw() {}
 
 function keyPressed() {
-	if (key === 's') {
+	if (key === "s") {
 		save(`out-${Date.now()}.png`);
 	}
 }

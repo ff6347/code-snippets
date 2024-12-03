@@ -1,106 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="/public/images/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Nimbus Mono PS", "Courier New", monospace;
+				font-weight: normal;
+			}
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="/public/images/favicon.svg" type="image/svg+xml">
-	<title>Document</title>
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-			font-family: 'Nimbus Mono PS', 'Courier New', monospace;
-			font-weight: normal;
-		}
+			main {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				gap: 1rem;
+			}
 
-		main {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			height: 100vh;
-			gap: 1rem;
-		}
+			form {
+				display: flex;
+				flex-direction: column;
+			}
 
-		form {
-			display: flex;
-			flex-direction: column;
-		}
+			label {
+				margin-bottom: 10px;
+			}
 
-		label {
-			margin-bottom: 10px;
-		}
+			input {
+				margin-bottom: 10px;
+			}
+			#target {
+				margin-bottom: 10px;
+			}
 
-		input {
-			margin-bottom: 10px;
-		}
-		#target{
-			margin-bottom: 10px;
-		}
+			button {
+				padding: 10px;
+				background-color: #007bff;
+				color: white;
+				border: none;
+				cursor: pointer;
+			}
 
-		button {
-			padding: 10px;
-			background-color: #007bff;
-			color: white;
-			border: none;
-			cursor: pointer;
-		}
+			input {
+				padding: 10px;
+				font-size: 1rem;
+			}
 
-		input {
-			padding: 10px;
-			font-size: 1rem;
-		}
+			button:hover {
+				background-color: #0056b3;
+			}
+		</style>
+	</head>
 
-		button:hover {
-			background-color: #0056b3;
-		}
-	</style>
-</head>
-
-<body>
-	<main>
-		<form>
-			<label for="content">Content</label>
-			<input type="text" id="content">
-			<button type="submit">Submit</button>
-		</form>
-		<div id="target">0</div>
-	</main>
-	<script>
-		const button = document.querySelector("button[type='submit']");
-		if (button) {
-			button.addEventListener("click", async (e) => {
-				e.preventDefault();
-				const input = document.querySelector("input[type='text']");
-				if (input) {
-					const inputValue = input.value;
-					if (inputValue.length === 0) {
-						alert("your content is to short");
-						return;
-					}
-					const response = await fetch("http://localhost:8000",
-						{
-							method: "POST",
-							body: JSON.stringify({ inputValue: inputValue })
+	<body>
+		<main>
+			<form>
+				<label for="content">Content</label>
+				<input type="text" id="content" />
+				<button type="submit">Submit</button>
+			</form>
+			<div id="target">0</div>
+		</main>
+		<script>
+			const button = document.querySelector("button[type='submit']");
+			if (button) {
+				button.addEventListener("click", async (e) => {
+					e.preventDefault();
+					const input = document.querySelector("input[type='text']");
+					if (input) {
+						const inputValue = input.value;
+						if (inputValue.length === 0) {
+							alert("your content is to short");
+							return;
 						}
-
-					);
-					if(response.ok){
-						const result = await response.json()
-						document.querySelector("#target").innerText = result.numberOfCharactes
-
+						const response = await fetch("http://localhost:8000", {
+							method: "POST",
+							body: JSON.stringify({ inputValue: inputValue }),
+						});
+						if (response.ok) {
+							const result = await response.json();
+							document.querySelector("#target").innerText =
+								result.numberOfCharactes;
+						}
+					} else {
+						console.log("could not find input");
 					}
-
-
-				} else {
-					console.log("could not find input");
-				}
-
-			});
-		}
-	</script>
-</body>
-
+				});
+			}
+		</script>
+	</body>
 </html>
