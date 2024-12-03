@@ -1,0 +1,7 @@
+# netlify.toml
+
+[[edge_functions]]
+  path = "/*"
+  function = "serve-file"
+
+# No redirects needed - let edge function handle everything
