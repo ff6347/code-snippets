@@ -1,9 +1,10 @@
 {
-	"name": "p5-playground",
+	"name": "@hbk-bs/code-snippets",
+
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"dev": "live-server --port=8080",
+		"dev": "netlify dev",
 		"build": "echo 'build'",
 		"build:local": "tree --gitignore -H \"\" -T \"digicom Code Snippets\" --hintro index-templates/hintro.html --houtro index-templates/houtro.html > index.html && cp node_modules/p5/lib/p5.min.js public/js/ && cp node_modules/p5/lib/addons/p5.sound.min.js ./public/js/",
 		"prepare": "husky"
@@ -22,6 +23,7 @@
 		"@types/p5": "1.7.6",
 		"husky": "9.1.6",
 		"live-server": "1.2.2",
+		"netlify-cli": "17.38.0",
 		"semantic-release": "24.2.0",
 		"typescript": "5.6.3"
 	},
