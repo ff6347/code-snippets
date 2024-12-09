@@ -10,11 +10,12 @@ export default async function handler(request: Request, context: Context) {
 	if (path.endsWith("/")) {
 		path += "index.html";
 	}
+	console.log("Path:", path);
 
 	const ext = path.split(".").pop();
 	const isDirectAccess = request.headers.get("accept")?.includes("text/html");
 
-	if (ext === "html") {
+	if (ext === "html" && path !== "/index.html") {
 		try {
 			const response = await context.next();
 			if (!response.ok) return response;
