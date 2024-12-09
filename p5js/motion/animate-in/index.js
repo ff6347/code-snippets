@@ -16,7 +16,7 @@ function draw() {
 		frameCount % duration,
 		-10,
 		width / 2,
-		duration,
+		duration
 	);
 	const easing1 = easeInExpo(frameCount % duration, 0, height / 2, duration);
 	stroke(easing % 360, 60, 60, 80);
