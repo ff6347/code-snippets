@@ -1,3 +1,4 @@
+/**@type {{x: number; y: number}} */
 let origin;
 function setup() {
 	const canvas = createCanvas(500, 500);
