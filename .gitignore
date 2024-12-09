@@ -219,3 +219,4 @@ Temporary Items
 
 # Local Netlify folder
 .netlify
+.netlify/state.json
