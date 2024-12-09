@@ -1,6 +1,5 @@
 {
 	"name": "@hbk-bs/code-snippets",
-
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
@@ -19,13 +18,17 @@
 		"p5": "1.11.1"
 	},
 	"devDependencies": {
+		"@eslint/js": "9.16.0",
 		"@technologiestiftung/semantic-release-config": "1.2.4",
 		"@types/p5": "1.7.6",
+		"eslint": "9.16.0",
+		"globals": "15.13.0",
 		"husky": "9.1.6",
 		"live-server": "1.2.2",
 		"netlify-cli": "17.38.0",
 		"semantic-release": "24.2.0",
-		"typescript": "5.6.3"
+		"typescript": "5.6.3",
+		"typescript-eslint": "8.17.0"
 	},
 	"prettier": {
 		"tabWidth": 2,
