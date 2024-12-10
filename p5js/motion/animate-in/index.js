@@ -3,7 +3,7 @@ const diam = 10;
 let a = 0;
 function setup() {
 	colorMode(HSL, 360, 100, 100, 100);
-	const canvas = createCanvas(500, 500);
+	const canvas = createCanvas(400, 400);
 	canvas.parent("sketch");
 	strokeWeight(0.4);
 	rectMode(CENTER);

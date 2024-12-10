@@ -1,7 +1,7 @@
 const coords = [];
 
 function setup() {
-	const canvas = createCanvas(500, 500);
+	const canvas = createCanvas(400, 400);
 	canvas.parent("sketch");
 	background("lightgoldenrodyellow");
 	angleMode(DEGREES);

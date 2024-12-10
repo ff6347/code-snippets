@@ -73,7 +73,7 @@ class MySuperParticle {
 const listOfParticles = [];
 let targetPosition;
 function setup() {
-	const canvas = createCanvas(500, 500);
+	const canvas = createCanvas(400, 400);
 	canvas.parent("sketch");
 	targetPosition = createVector(width / 2, height / 2);
 }

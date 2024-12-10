@@ -7,7 +7,7 @@
 
 function setup() {
 	// setup runs once
-	const canvas = createCanvas(500, 500);
+	const canvas = createCanvas(400, 400);
 	canvas.parent("sketch");
 	background(255);
 

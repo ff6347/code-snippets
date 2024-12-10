@@ -2,7 +2,7 @@ function setup() {
 	colorMode(HSL, 360, 100, 100, 100);
 	// this is function scope
 	// setup is executed once
-	createCanvas(500, 500);
+	createCanvas(400, 400);
 	background("black");
 	const step = 25;
 

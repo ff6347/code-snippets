@@ -8,7 +8,7 @@ let imageIndex = 0;
 function preload() {
 	// img = loadImage('./adventskranz_alpha.png');
 	img2 = loadImage(
-		"https://hbk-bs.github.io/the-archives-Annagnb/assets/images/IMG_0521.WEBP",
+		"https://hbk-bs.github.io/the-archives-Annagnb/assets/images/IMG_0521.WEBP"
 	);
 	img3 = loadImage("./adventskranz3.png");
 
@@ -19,7 +19,7 @@ function preload() {
 	images = [img2, img3];
 }
 function setup() {
-	createCanvas(500, 500);
+	createCanvas(400, 400);
 	background("lightgoldenrodyellow");
 	const button = createButton("index 1");
 	const button2 = createButton("index 0");

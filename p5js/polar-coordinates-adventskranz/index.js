@@ -4,7 +4,7 @@ let centerX = 50;
 let centerY = 50;
 let radius = 100;
 function setup() {
-	const canvas = createCanvas(500, 500);
+	const canvas = createCanvas(400, 400);
 	colorMode(HSL, 360, 100, 100, 100);
 	canvas.parent("sketch");
 	stroke("black");
