@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/hbk-bs/code-snippets/compare/v1.1.0...v1.2.0) (2024-12-10)
+
+
+### Features
+
+* Add dashed line ([31d9850](https://github.com/hbk-bs/code-snippets/commit/31d985041462a8cf5ba74b6251f12212d75161ac))
+
 # [1.1.0](https://github.com/hbk-bs/code-snippets/compare/v1.0.0...v1.1.0) (2024-12-10)
 
 
