@@ -86,8 +86,12 @@ font-weight: normal; }</style></head>`
 		if (isDirectAccess) {
 			const content = await response.clone().text();
 
+			let shikiExt = ext;
+			if (shikiExt === "mjs" || shikiExt === "cjs") {
+				shikiExt = "js";
+			}
 			const highlighted = await codeToHtml(content, {
-				lang: ext,
+				lang: shikiExt,
 				themes: {
 					light: ghlight,
 					dark: ghdark,
