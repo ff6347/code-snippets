@@ -11,7 +11,7 @@ export default async function handler(request: Request, context: Context) {
 		path += "index.html";
 	}
 
-	const ext = path.split(".").pop();
+	const ext = path.split(".").pop() ?? "";
 	const isDirectAccess = request.headers.get("accept")?.includes("text/html");
 
 	if (ext === "html" && path !== "/index.html") {
@@ -36,14 +36,19 @@ font-weight: normal; }</style></head>`
 		}
 	}
 
-	// Only process js and css files
-	if (
-		ext !== "js" &&
-		ext !== "css" &&
-		ext !== "ts" &&
-		ext !== "json" &&
-		ext !== "md"
-	) {
+	const supportedExtensions = [
+		"js",
+		"css",
+		"ts",
+		"json",
+		"md",
+		"cjs",
+		"mjs",
+		"tsx",
+		"jsx",
+	];
+
+	if (!supportedExtensions.includes(ext)) {
 		return context.next();
 	}
 
@@ -54,13 +59,15 @@ font-weight: normal; }</style></head>`
 		let contentType = "text/plain";
 		switch (ext) {
 			case "js":
+			case "ts":
+			case "mjs":
+			case "cjs":
+			case "tsx":
+			case "jsx":
 				contentType = "application/javascript";
 				break;
 			case "css":
 				contentType = "text/css";
-				break;
-			case "ts":
-				contentType = "application/typescript";
 				break;
 			case "json":
 				contentType = "application/json";
