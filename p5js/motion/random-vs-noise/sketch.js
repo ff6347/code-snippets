@@ -10,7 +10,7 @@ let y = 0;
 let yoff = 0.0;
 function setup() {
 	// setup runs once
-	const canvas = createCanvas(500, 100);
+	const canvas = createCanvas(windowWidth - 10, 100);
 	canvas.parent("sketch");
 	background(200);
 	y = height / 2;

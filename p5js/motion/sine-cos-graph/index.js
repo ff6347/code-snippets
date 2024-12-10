@@ -1,5 +1,5 @@
 function setup() {
-	const canvas = createCanvas(800, 400);
+	const canvas = createCanvas(windowWidth - 10, 400);
 	canvas.parent("sketch");
 	background(255);
 }

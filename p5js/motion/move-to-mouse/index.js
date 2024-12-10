@@ -38,7 +38,7 @@ class Particle {
 let p;
 let targetPosition;
 function setup() {
-	const canvas = createCanvas(400, 400);
+	const canvas = createCanvas(100, 100);
 	canvas.parent("sketch");
 
 	const startPosition = createVector(random(width), random(height));

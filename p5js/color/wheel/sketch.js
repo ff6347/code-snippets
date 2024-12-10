@@ -10,7 +10,7 @@ let sat = 50; //saturation offset from the center
 const brightn = 50;
 
 function setup() {
-	const canvas = createCanvas(400, 400);
+	const canvas = createCanvas(300, 300);
 	canvas.parent("sketch");
 	colorMode(HSB, 360, 100, 100, 100);
 	angleMode(DEGREES);

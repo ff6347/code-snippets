@@ -12,7 +12,7 @@ function preload() {
 }
 
 function setup() {
-	const canvas = createCanvas(200, 200);
+	const canvas = createCanvas(100, 100);
 	canvas.parent("sketch");
 	background("white");
 }

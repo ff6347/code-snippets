@@ -5,7 +5,7 @@ const x = (n) => width * n;
 const y = (n) => height * n;
 const s = (n) => (height > width ? height * n : width * n);
 function setup() {
-	const canvas = createCanvas(300, 600);
+	const canvas = createCanvas(100, 500);
 	canvas.parent("sketch");
 	colorMode(HSL, 360, 100, 100, 100);
 	angleMode(DEGREES);
@@ -17,7 +17,7 @@ function setup() {
 		push();
 		translate(
 			x(0.5) + random(-x(0.2), x(0.2)),
-			y(0.5) + random(-y(0.5), y(0.5)),
+			y(0.5) + random(-y(0.5), y(0.5))
 		);
 		fill(random(200, 330), 30, 80, random(100));
 		rotate(random(360));
@@ -38,7 +38,7 @@ function setup() {
 			coords[1].x,
 			coords[1].y,
 			coords[2].x,
-			coords[2].y,
+			coords[2].y
 		);
 		pop();
 	}

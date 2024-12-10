@@ -12,7 +12,7 @@ const data = [];
 
 let generatingData = false;
 function setup() {
-	const canvas = createCanvas(400, 400);
+	const canvas = createCanvas(100, 100);
 	canvas.parent("sketch");
 	generatingData = true;
 	ollama

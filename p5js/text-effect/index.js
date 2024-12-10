@@ -1,6 +1,6 @@
 function setup() {
 	smooth();
-	const canvas = createCanvas(700, 200);
+	const canvas = createCanvas(windowWidth - 10, 200);
 	canvas.parent("sketch");
 	colorMode(HSL, 360, 100, 100, 100);
 	const color1 = color(230, 60, 60);
@@ -9,7 +9,7 @@ function setup() {
 	const palette = spectral.palette(
 		`rgb(${red(color1)},${green(color1)},${blue(color1)})`,
 		`rgb(${red(color2)},${green(color2)},${blue(color2)})`,
-		steps,
+		steps
 	);
 	console.log(palette);
 	background("white");

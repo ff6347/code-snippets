@@ -9,7 +9,7 @@ const coords = [];
 function setup() {
 	rectMode(CENTER);
 	angleMode(DEGREES);
-	const canvas = createCanvas(200, 200);
+	const canvas = createCanvas(100, 100);
 	canvas.parent("sketch");
 	background(128);
 	const horizontal = [];

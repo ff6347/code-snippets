@@ -8,7 +8,7 @@
 // [] ALT + 5 6
 function setup() {
 	// setup runs once
-	const canvas = createCanvas(400, 400);
+	const canvas = createCanvas(100, 100);
 	canvas.parent("sketch");
 	background(128);
 	const diam = 40;

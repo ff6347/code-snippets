@@ -49,7 +49,7 @@ class Area {
 			this.size / 2,
 			-this.size / 2,
 			-this.size / 2,
-			this.size / 2,
+			this.size / 2
 		);
 
 		// Check bottom triangle
@@ -61,7 +61,7 @@ class Area {
 			this.size / 2,
 			-this.size / 2,
 			-this.size / 2,
-			this.size / 2,
+			this.size / 2
 		);
 
 		return { inTop, inBottom };
@@ -100,7 +100,7 @@ class Area {
 			this.size / 2,
 			-this.size / 2,
 			-this.size / 2,
-			this.size / 2,
+			this.size / 2
 		);
 		if (this.bottomIsDark) {
 			fill("black");
@@ -114,7 +114,7 @@ class Area {
 			this.size / 2,
 			-this.size / 2,
 			-this.size / 2,
-			this.size / 2,
+			this.size / 2
 		);
 		pop();
 	}
@@ -122,7 +122,7 @@ class Area {
 
 const areas = [];
 function setup() {
-	const canvas = createCanvas(400, 400);
+	const canvas = createCanvas(300, 300);
 	canvas.parent("sketch");
 	background(128);
 	const areaSize = 20;

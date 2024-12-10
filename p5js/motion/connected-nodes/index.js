@@ -48,10 +48,10 @@ class Particle {
 let particles = [];
 
 function setup() {
-	const canvas = createCanvas(400, 400);
+	const canvas = createCanvas(100, 100);
 	canvas.parent("sketch");
 	randomSeed(42);
-	particles = Array.from({ length: 300 }).map(
+	particles = Array.from({ length: 100 }).map(
 		(_) => new Particle(createVector(random(width), random(height)))
 	);
 
