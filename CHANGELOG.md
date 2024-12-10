@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/hbk-bs/code-snippets/compare/v1.2.0...v1.2.1) (2024-12-10)
+
+
+### Bug Fixes
+
+* Canvas sizes ([335d28e](https://github.com/hbk-bs/code-snippets/commit/335d28e2334f7306eb6b56752430fd0dfac8417f)), closes [#8](https://github.com/hbk-bs/code-snippets/issues/8)
+
 # [1.2.0](https://github.com/hbk-bs/code-snippets/compare/v1.1.0...v1.2.0) (2024-12-10)
 
 
