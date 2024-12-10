@@ -1,3 +1,28 @@
+# [1.1.0](https://github.com/hbk-bs/code-snippets/compare/v1.0.0...v1.1.0) (2024-12-10)
+
+
+### Bug Fixes
+
+* canvas size to 400 ([2653065](https://github.com/hbk-bs/code-snippets/commit/2653065a849be15014ebcca1fb1bb1a8c74ed85b)), closes [#8](https://github.com/hbk-bs/code-snippets/issues/8)
+* cjs and mjs file serving ([7182dd5](https://github.com/hbk-bs/code-snippets/commit/7182dd5863c22b7cf99d1276d7e3b7958a3f8dca))
+* Exclude root path ([5d26f49](https://github.com/hbk-bs/code-snippets/commit/5d26f49d753b44da449a7316eb4ad57ad038bdc2))
+
+
+### Features
+
+* Add move to mouse ([e3f44e6](https://github.com/hbk-bs/code-snippets/commit/e3f44e6c494570f06955c955e292660d8172c6f1))
+* Add move to target ([5eeb641](https://github.com/hbk-bs/code-snippets/commit/5eeb641918b52be648c81b02db0ca83d12e501cb))
+* Add particle blavk hole ([9df97c1](https://github.com/hbk-bs/code-snippets/commit/9df97c14f5da93bc13608f13cbc01fc3b8fb3885))
+* Add some README ([5bdefdf](https://github.com/hbk-bs/code-snippets/commit/5bdefdf34c7b0b077ecccdccd9eb37e0619c1e16))
+* Add vector section ([568c0d5](https://github.com/hbk-bs/code-snippets/commit/568c0d54b367136066779d78f9d6d1bf4fdb4440))
+* Adds connected nodes ([dccdc89](https://github.com/hbk-bs/code-snippets/commit/dccdc89852e6b39443af98c66e529f86c9e793f8))
+* highlight json and markdown ([eb54ca2](https://github.com/hbk-bs/code-snippets/commit/eb54ca24770c4e737db4ef089336207bf9a80a4a))
+* Inject css into all html files to use one font ([298f5ce](https://github.com/hbk-bs/code-snippets/commit/298f5ce068cec9fa4070234e8c178a1b98264994))
+* More extensions and hardening ([4b0a4cf](https://github.com/hbk-bs/code-snippets/commit/4b0a4cf32fbd50d1bfec408843da2e0034f620c9))
+* particle separate ([85d82b0](https://github.com/hbk-bs/code-snippets/commit/85d82b0309d23773a5a43942b4dc214f5e553aa8))
+* Serve js and css files with syntax highlight ([d34f695](https://github.com/hbk-bs/code-snippets/commit/d34f6955ddc21969163edcb6ab7730211f41da00))
+* some vector examples ([c155768](https://github.com/hbk-bs/code-snippets/commit/c15576892a1f673f0dfe14a7648e8dcb55a1108d))
+
 # 1.0.0 (2024-12-02)
 
 
