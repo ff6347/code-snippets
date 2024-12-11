@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/hbk-bs/code-snippets/compare/v1.2.1...v1.3.0) (2024-12-11)
+
+
+### Features
+
+* Add particle eat particle world ([9246b02](https://github.com/hbk-bs/code-snippets/commit/9246b024d1e40bdd9d5a4a87f34a29deefe58c79))
+
 ## [1.2.1](https://github.com/hbk-bs/code-snippets/compare/v1.2.0...v1.2.1) (2024-12-10)
 
 
