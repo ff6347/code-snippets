@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/hbk-bs/code-snippets/compare/v1.3.0...v1.4.0) (2025-01-03)
+
+
+### Features
+
+* blinkenlichten and more particles ([074769e](https://github.com/hbk-bs/code-snippets/commit/074769e2a57a6f1bfb437919a8c93a944d9bf583))
+
 # [1.3.0](https://github.com/hbk-bs/code-snippets/compare/v1.2.1...v1.3.0) (2024-12-11)
 
 
