@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="/public/images/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<title>p5js &#x26; ml5.js - image classifier with upload</title>
+		<link rel="stylesheet" href="/public/css/reset.css" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main>
+			<input type="file" id="file" />
+			<div id="sketch"></div>
+			<div id="results">this image is <span id="label">…?</span></div>
+
+			<p>get the source code <a href="./index.js">source code index.js</a> and some images from here <a href="images/index.html">here</a></p>
+		</main>
+		<script src="/public/js/ml5.1.2.1.min.js"></script>
+		<script src="/public/js/p5.min.js"></script>
+		<script src="index.js"></script>
+		<script>
+			// const path = window.location.pathname;
+			// console.log(path);
+			// const folders = path.split("/").filter((p) => p !== "");
+			// document.title = folders[folders.length - 1];
+		</script>
+	</body>
+</html>
