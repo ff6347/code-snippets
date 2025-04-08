@@ -1,0 +1,43 @@
+html,
+body {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	/* System UI */
+	font-family: system-ui, sans-serif;
+	font-weight: normal;
+	width: 100%;
+}
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	position: relative;
+	width: 100%;
+}
+
+main p:last-child {
+	position: absolute;
+	bottom: 1rem;
+	margin: 0;
+	font-size: 12px;
+}
+
+#upload {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+	width: 100px;
+	border: 1px solid black;
+}
+
+canvas {
+	border: 1px solid black;
+}
+input[type="file"] {
+	display: none;
+}
