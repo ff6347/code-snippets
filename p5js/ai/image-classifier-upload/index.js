@@ -5,10 +5,8 @@ let imageModelURL = "https://teachablemachine.withgoogle.com/models/GdPa0SVYo/";
 
 let classifier;
 // @ts-ignore
-/** @type {p5.Element | null} */
 let img = null;
 // @ts-ignore
-/** @type {p5.Element} */
 let canvas;
 let bgcolor = "white";
 const defaultMessage = "Drop an\nimage here.";
@@ -42,7 +40,6 @@ function setup() {
 		false
 	);
 
-	//@ts-ignore
 	canvas = createCanvas(100, 100);
 	canvas.parent("sketch");
 	background(bgcolor);
@@ -64,7 +61,7 @@ function setup() {
 	});
 
 	// Handle file input changes
-	//@ts-ignore
+
 	const fileInput = select("#file");
 	if (fileInput) {
 		fileInput.changed(handleFileInput);
@@ -79,7 +76,6 @@ function draw() {
 	background(bgcolor);
 	if (img) {
 		// Draw the loaded image
-		//@ts-ignore
 		image(img, 0, 0, width, height);
 	}
 
@@ -91,8 +87,6 @@ function draw() {
 	text(message, width / 2, height / 2);
 }
 
-// @ts-ignore
-/** @param {p5.File} file */
 function handleFile(file) {
 	if (file.type === "image") {
 		img = createImg(file.data, "uploaded image");
@@ -102,15 +96,11 @@ function handleFile(file) {
 		console.log("Not an image file!");
 	}
 }
-
-/** @param {Event} event */
 function handleFileInput(event) {
-	// @ts-ignore
-	const file = /** @type {HTMLInputElement} */ (event.target).files[0];
+	const file = event.target.files[0];
 	if (file && file.type.startsWith("image/")) {
 		const reader = new FileReader();
 		reader.onload = function (e) {
-			//@ts-ignore
 			img = createImg(e.target.result, "uploaded image");
 			img.hide();
 			classifyImage(img);
